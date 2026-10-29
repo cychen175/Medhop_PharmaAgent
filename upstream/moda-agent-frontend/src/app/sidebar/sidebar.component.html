@@ -1,0 +1,23 @@
+<div class="sidebar" id="sidebar-wrapper">
+  <div class="border-right p-0" id="toggleSidebar">
+    <div class="sidebar-pl- offcanvas-md- offcanvas-end-" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+      <div class="brand-area">
+        <a class="navbar-brand d-flex align-items-center">
+          <img src="assets/images/logo/logo.svg" alt="Logo" width="42" height="auto" class="align-text-top me-3" style="cursor: pointer;" (click)="refreshPage()">
+        </a>
+      </div>
+      <ul class="session-list nav flex-column mb-auto pt-4 custom-scrollbar">
+        <li class="nav-item ps-4 pb-3 d-flex align-items-center">
+          <img src="assets/images/icon-sidebar-history.svg">
+          <span class="nav-title align-items-center gap-2 ms-2 font-bold">
+            歷史對話</span>
+        </li>
+        <li *ngFor="let session of sessions; let i = index" class="nav-item pb-2">
+          <a class="session nav-link" [ngClass]="{'active-history': i === isNewChat.sessionIndex}" (click)="selectSession(i)">
+            <span class="sidebar-history" style="flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ session.question }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

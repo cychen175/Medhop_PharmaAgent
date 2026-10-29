@@ -1,0 +1,19 @@
+.snackbar {
+    position: fixed;
+    bottom: 40px;
+    left: 50px;
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.16);
+    min-width: 200px;
+    z-index: 9999999999;
+    color: #553e34;
+    text-align: center;
+    border: 1px solid #553e34b3;
+  }
+
+  .has-message {
+    margin-bottom: 15px !important;
+  }

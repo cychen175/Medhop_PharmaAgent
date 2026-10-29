@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "date": "2026-10-27",
+  "checks": [
+    "exact_user_sentence_single_drug",
+    "comma_separated_dose_and_frequency_associated",
+    "Chinese_dose_units_preserved",
+    "multiple_drug_regimens_not_combined",
+    "attribute_names_not_drug_names",
+    "medication_detail_preserves_recorded_values",
+    "traceable_legacy_attribute_repair_preserves_history",
+    "chat_and_compound_regressions"
+  ],
+  "live_patients_created": 0
+}

@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Project Name"
+authors:
+  - family-names: "FamilyName"
+    given-names: "GivenName"
+    affiliation: "Organization"
+date-released: "YYYY-MM-DD"
+version: "0.0.1"
+abstract: |
+  (*此處需撰寫專案摘要，簡述功能、特色與應用情境*)
+
+keywords:
+  - keyword-1
+  - keyword-2
+  - keyword-3
+
+repository-code: "https://github.com/your-repo/project"
+license: "License-Identifier"

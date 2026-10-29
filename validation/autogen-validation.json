@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "trace": [
+    {
+      "tool": "consult_pharmacy_agent",
+      "result": "已委派原 moda-agent AssistantAgent"
+    },
+    {
+      "tool": "read_patient_medications",
+      "result": "2 項用藥"
+    },
+    {
+      "tool": "retrieve_pharmacy_evidence",
+      "result": "1 組來源核對"
+    }
+  ],
+  "upstream": "upstream/moda-agent/agent.py",
+  "compatibility_prompts": true,
+  "original_28_checks": false
+}

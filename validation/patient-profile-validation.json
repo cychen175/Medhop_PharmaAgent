@@ -1,0 +1,12 @@
+{
+  "all_passed": true,
+  "checks": [
+    "auto_id_name_lookup_no_duplicate_no_history_as_medication",
+    "demographic_change_invalidates_old_review_and_clears_old_weeks",
+    "profile_range_validation_no_assumed_pregnancy",
+    "chat_demographics_persist_and_do_not_create_medications",
+    "new_patient_defaults_unknown_and_zero_age_preserved"
+  ],
+  "isolated_runtime": true,
+  "clinical_decisions_automated": false
+}

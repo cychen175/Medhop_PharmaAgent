@@ -1,0 +1,244 @@
+<div class="chat-layout">
+  <div class="main-chat">
+
+    <div class="chat-container" *ngIf="currentUserMessage; else newSession">
+      <div class="chat-content-wrapper">
+        <div class="messages" #messagesContainer (scroll)="checkScrollPosition()">
+          <!-- 使用者問題 -->
+          <div class="message-wrapper user-message">
+            <div class="message-bubble">
+              <div>
+                <div class="message-content">{{ currentUserMessage }}</div>
+              </div>
+            </div>
+          </div>
+          <!-- 等待回應效果 -->
+          <div *ngIf="isResponsing" class="container mt-3">
+            <div class="title-bar">
+              <div class="avatar-loader-container">
+                <svg class="avatar-loader" viewBox="0 0 40 40">
+                  <circle cx="20" cy="20" r="18" class="avatar-border-circle"></circle>
+                  <g class="avatar-star" transform="translate(20, 23) scale(0.7) translate(-17.5, -17.5)">
+                    <path d="M32.7212 23.7339L27.3112 18.2057C24.938 18.4507 21.7361 18.7529 19.9675 16.8853C18.4821 15.3183 12.8722 8.96484 12.8722 8.96484C12.8722 8.96484 12.1304 9.92732 12.2954 12.1268C12.4605 14.328 13.3674 17.132 14.5227 18.7008C15.678 20.2679 17.4935 21.7533 19.0606 22.4135C20.6277 23.0737 22.497 23.3204 22.497 23.3204L32.7229 23.7321L32.7212 23.7339Z" fill="#E27920" />
+                    <path d="M15.5595 21.1769C15.2833 21.0883 12.4966 22.9038 11.8972 23.1001C10.4813 23.564 8.99588 23.7551 7.51047 23.8055C5.01393 23.8906 2.49654 23.795 0 23.736C0 23.736 4.7846 18.3746 4.78634 18.3728C4.89926 18.246 6.51845 18.597 6.71825 18.6126C9.11228 18.802 10.8444 18.081 12.8719 16.8892C12.8719 16.8892 13.0369 18.2095 13.7787 19.5299C14.5206 20.8503 15.5578 21.1804 15.5595 21.1804V21.1769Z" fill="#503520" />
+                    <path d="M0 0.598145L5.41004 6.12632C5.41004 6.12632 7.80234 5.87962 9.37115 6.12632C10.9382 6.37302 11.2683 5.87962 12.7537 7.44669C14.2391 9.01376 19.849 15.3672 19.849 15.3672C19.849 15.3672 20.5908 14.4047 20.4258 12.2052C20.2607 10.004 19.3538 7.19999 18.1985 5.63118C17.0432 4.06411 15.2277 2.5787 13.6606 1.91851C12.0935 1.25833 10.2242 1.01163 10.2242 1.01163L0 0.598145Z" fill="#E27920" />
+                    <path d="M17.1611 3.15567C17.4947 3.25991 18.3078 2.62405 18.5718 2.4729C19.2807 2.0681 19.9687 1.58165 20.7331 1.29326C24.0166 0.0545419 27.7901 0.471501 31.2231 0.560104C31.4385 0.565316 32.5973 0.735574 32.7206 0.598325L27.9343 5.96146C26.4246 5.69391 24.7793 5.37598 23.2661 5.78077C22.8717 5.88675 19.8071 7.11157 19.8488 7.44687C19.8488 7.44687 19.6837 6.1265 18.9419 4.80613C18.2001 3.48576 17.1629 3.15567 17.1611 3.15567Z" fill="#503520" />
+                    <path d="M34.2862 10.1503H30.7577V6.65479H27.5384V10.1503H24.0776V13.3696H27.5384V16.8651H30.7577V13.3696H34.2862V10.1503Z" fill="#9BAA64" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- 回應 -->
+          <div *ngIf="currentAssistantMessage" class="message-wrapper assistant-message">
+            <div class="message-bubble">
+              <div class="message-content">
+                <div [innerHTML]="getSafeHtml(currentAssistantMessage || '')"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="main-input-area main-chat-message p-3 bg-light rounded">
+          <div class="input-row d-flex align-items-center">
+            <span class="placeholder-icon me-2"> </span>
+            <textarea
+              class="init-input init-input-84"
+              #messageInput
+              [(ngModel)]="newMessage"
+              (keydown)="handleKeyDown($event)"
+              (keyup)="handleKeyUp($event)"
+              (input)="adjustTextareaHeight()"
+              [placeholder]="selectedAgent?.placeholder"
+              [disabled]="isResponsing"
+            ></textarea>
+          </div>
+          <div class="action-row d-flex justify-content-end align-items-center mt-2">
+            <div class="ms-auto">
+              <div class="dropdown">
+                <button class="btn btn-light dropdown-toggle custom-model-select" type="button" id="modelDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{ selectedAgent?.agentName || '選擇Agent' }}
+                  <img src="/assets/images/down-arrow2.svg" alt="Dropdown Arrow" class="custom-dropdown-arrow">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="modelDropdown">
+                  <li *ngFor="let agent of agentList" class="dropdown-item custom-model-item" (click)="selectAgent(agent)">
+                    <div class="d-flex align-items-center">
+                      <div class="flex-grow-1 m-r-15">
+                        <div class="model-name">{{ agent.agentName }}</div>
+                      </div>
+                      <span *ngIf="selectedAgent?.agentName === agent.agentName" class="checkmark">
+                        <img src="/assets/images/icon-check.svg" alt="Selected" class="checkmark-icon">
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button class="send-message" [disabled]="!canSendMessage()" (click)="sendMessage()">
+              <img src="/assets/images/send-message.svg" alt="Send Message" class="send-icon">
+            </button>
+          </div>
+        </div> -->
+        <div class="form-text text-muted mt-3 text-center bg-w">
+          <span *ngIf="modelName" id="">請注意，此資訊為AI生成僅供參考。您正在使用 {{ modelName }}。</span>
+          <span *ngIf="!modelName" id="">請注意，此資訊為AI生成僅供參考。您目前未使用任何模型，請先進行設定。</span>
+        </div>
+      </div>
+    </div>
+
+    <ng-template #newSession>
+      <div class="no-session">
+        <div class="chat-content-wrapper">
+          <div class="no-session-content" #noSessionContent>
+            <div class="new-chat-head">
+              <h1 class="mb-4" style="color: white;">您好，歡迎使用 AI 醫護虛實共照 - AI 藥事 Agent</h1>
+              <p style="color: white;">{{ selectedAgent.description }}</p>
+            </div>
+
+            <!-- 醫師-範例 -->
+            <div *ngIf="selectedAgent === agentList[0]" class="container mt-5 col-lg-9 col-sm-10">
+              <div class="card card-example position-relative">
+                <span class="bulb-icon"><img src="/assets/images/icon-example.png"></span>
+                <h5 class="card-title">處方審查與用藥調整</h5>
+                <div class="row">
+                  <ng-container *ngFor="let example of doctorInputExamples">
+                    <div class="col-4">
+                      <button class="btn btn-secondary example-text" (click)="setInputExample(example)">{{ example.exampleName }}</button>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+
+            <!-- 藥師-範例 -->
+            <div *ngIf="selectedAgent === agentList[1]" class="container mt-5 col-lg-9 col-sm-10">
+              <div class="card card-example position-relative">
+                <span class="bulb-icon"><img src="/assets/images/icon-example.png"></span>
+                <h5 class="card-title">處方藥品替代與交互作用檢查</h5>
+                <div class="row">
+                  <ng-container *ngFor="let example of pharmacistInputExamples">
+                    <div class="col-4">
+                      <button class="btn btn-secondary example-text" (click)="setInputExample(example)">{{ example.exampleName }}</button>
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-chat-message p-3 bg-light rounded">
+              <div class="input-row d-flex align-items-center">
+                <span class="placeholder-icon me-2"> </span>
+                <textarea
+                  class="init-input init-input-84"
+                  #messageInput
+                  [(ngModel)]="newMessage"
+                  (keydown)="handleKeyDown($event)"
+                  (keyup)="handleKeyUp($event)"
+                  (input)="adjustTextareaHeight()"
+                  [placeholder]="'問問虛實共照'"
+                  [disabled]="isResponsing"
+                ></textarea>
+              </div>
+              <div class="action-row d-flex justify-content-end align-items-center mt-2">
+                <div>
+                  <button class="upload-image-btn me-3" (click)="openUploadPrescriptionModal()">
+                    <img src="/assets/images/btn-upload-image.svg" alt="Upload Image" class="upload-icon">
+                  </button>
+                </div>
+                <div class="ms-auto">
+                  <div class="dropdown">
+                    <button class="btn btn-light dropdown-toggle custom-model-select" type="button" id="modelDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                      {{ selectedAgent?.agentName || '選擇Agent' }}
+                      <img src="/assets/images/down-arrow2.svg" alt="Dropdown Arrow" class="custom-dropdown-arrow">
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="modelDropdown">
+                      <li *ngFor="let agent of agentList" class="dropdown-item custom-model-item" (click)="selectAgent(agent)">
+                        <div class="d-flex align-items-center">
+                          <div class="flex-grow-1 m-r-15">
+                            <div class="model-name">{{ agent.agentName }}</div>
+                            <!-- <div class="model-description">{{ agent.description }}</div> -->
+                          </div>
+                          <span *ngIf="selectedAgent?.agentName === agent.agentName" class="checkmark">
+                            <img src="/assets/images/icon-check.svg" alt="Selected" class="checkmark-icon">
+                          </span>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <button class="send-message" [disabled]="!canSendMessage()" (click)="sendMessage()">
+                  <img src="/assets/images/send-message.svg" alt="Send Message" class="send-icon">
+                </button>
+              </div>
+            </div>
+
+            <div class="form-text text-muted text-center bg-w">
+              <span *ngIf="modelName" id="">請注意，此資訊為AI生成僅供參考。您正在使用 {{ modelName }}。</span>
+              <span *ngIf="!modelName" id="">請注意，此資訊為AI生成僅供參考。您目前未使用任何模型，請先進行設定。</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </ng-template>
+
+  </div>
+
+  <div class="feedback-widget-container">
+    <button class="feedback-toggle-btn" (click)="openSatisfy()" [hidden]="!isReplyEnd"></button>
+
+    <div #feedbackWidget class="feedback-widget hidden" [ngClass]="{'active': isOpenSatisfy}">
+      <h2 class="widget-title">使用意見與建議</h2>
+      <div class="rating-section">
+        <p>滿意度星等 (5星最高分)</p>
+        <div class="stars" [attr.data-rating]="rating">
+          <span #star class="star" (click)="setRating(1)" data-value="1"><i class="fa-solid fa-star"></i></span>
+          <span #star class="star" (click)="setRating(2)" data-value="2"><i class="fa-solid fa-star"></i></span>
+          <span #star class="star" (click)="setRating(3)" data-value="3"><i class="fa-solid fa-star"></i></span>
+          <span #star class="star" (click)="setRating(4)" data-value="4"><i class="fa-solid fa-star"></i></span>
+          <span #star class="star" (click)="setRating(5)" data-value="5"><i class="fa-solid fa-star"></i></span>
+        </div>
+        <span id="rating-text" class="ms-4">{{ rating }} 星</span>
+      </div>
+      <div class="comment-section mt-3">
+        <p>請分享您的想法或建議</p>
+        <div class="other-comment mt-2">
+          <textarea class="comment-box" rows="4" placeholder="自行選填" [(ngModel)]="comment" (keyup.enter)="submitFeedback()"></textarea>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button class="btn btn-submit" (click)="submitFeedback()">送出</button>
+      </div>
+      <p class="privacy-note mt-2">您的資料受到嚴格保護，僅用於提供服務與改善體驗</p>
+    </div>
+  </div>
+</div>
+
+<ng-template #startExperienceModal let-modal>
+  <div class="modal-content start-experience-modal-content">
+    <h2 class="modal-title" style="font-size: 24px;font-weight: bold;">歡迎體驗 AI 醫護虛實共照</h2>
+    <p class="modal-description mb-4">為了確保個人化服務與最佳體驗，請輸入您的基本資料</p>
+    <div id="infoForm" class="modal-form">
+      <div class="form-group">
+        <label for="nickname" class="form-label-14">您的稱呼*</label>
+        <input type="text" class="form-input" [(ngModel)]="userName" placeholder="必填" (keyup.enter)="canSubmitName() ? startUsing() : null">
+      </div>
+      <button type="submit" class="modal-button" [disabled]="!canSubmitName()" (click)="startUsing()">開始體驗</button>
+    </div>
+    <p class="data-protection-note mt-2">您的資料受到嚴格保護，僅用於提供服務與改善體驗</p>
+  </div>
+</ng-template>
+
+<ng-template #uploadPrescriptionModal let-modal>
+  <div class="modal-header">
+    <div class="modal-title m-3 fw-bold text-decoration-none fs-4" id="staticBackdropLabel">上傳藥單進行識別</div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cancelOcrAndClose()"></button>
+  </div>
+  <div class="modal-body align-items-center">
+    <app-ocr-upload></app-ocr-upload>
+  </div>
+  <hr>
+  <div class="modal-footer d-flex- justify-content-between">
+    <button type="button" class="btn btn-modal-outline fs-6" data-bs-dismiss="modal" (click)="cancelOcrAndClose()">取消</button>
+    <button [disabled]="!isGettingVlmPrescription" type="button" class="btn btn-modal-default fs-6" (click)="confirmVlmPrescription()">複製到對話框</button>
+  </div>
+</ng-template>

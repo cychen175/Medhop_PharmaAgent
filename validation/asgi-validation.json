@@ -1,0 +1,32 @@
+{
+  "python": "3.14.7",
+  "status": "done",
+  "review": "hrcNARDjFyHtsN_2ITC-lgMl",
+  "patient": null,
+  "agent": {
+    "status": "completed",
+    "trace": [
+      {
+        "tool": "consult_pharmacy_agent",
+        "result": "已委派原 moda-agent AssistantAgent"
+      },
+      {
+        "tool": "read_patient_medications",
+        "result": "5 項用藥"
+      },
+      {
+        "tool": "retrieve_pharmacy_evidence",
+        "result": "10 組來源核對"
+      }
+    ],
+    "upstream": "upstream/moda-agent/agent.py",
+    "compatibility_prompts": true,
+    "original_28_checks": false
+  },
+  "pair_count": 10,
+  "report_state": "handoff",
+  "pending_items": 29,
+  "delivery_block": true,
+  "pydantic_invalid_boolean_block": true,
+  "audit": true
+}

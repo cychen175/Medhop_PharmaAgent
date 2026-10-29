@@ -1,0 +1,6 @@
+{
+  "archived_test_record": "P-87424588",
+  "recoverable_database_and_key": true,
+  "remaining_patients": 0,
+  "policy": "Only the verified test case was removed from the working database; backup retained locally, excluded from ZIP."
+}

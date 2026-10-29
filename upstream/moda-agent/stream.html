@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SSE Stream Tester</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 24px; background: #0f172a; color: #e2e8f0; }
+    h2 { margin-bottom: 16px; }
+    .row { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+    label { min-width: 110px; }
+    textarea { flex: 1; min-height: 140px; padding: 8px; border-radius: 4px; border: 1px solid #1f2937; background: #0b1220; color: #e2e8f0; }
+    select, button { padding: 6px 12px; border-radius: 4px; border: 1px solid #1f2937; background: #16213a; color: #e2e8f0; }
+    button { cursor: pointer; }
+    pre { white-space: pre-wrap; word-break: break-word; background: #020617; color: #f8fafc; padding: 16px; border-radius: 6px; height: 320px; overflow-y: auto; margin-top: 16px; border: 1px solid #1f2937; }
+    .status { min-height: 20px; font-weight: 600; }
+    .status.ok { color: #34d399; }
+    .status.err { color: #f87171; }
+    .inspector { flex: 1; background: #111827; border-radius: 4px; padding: 10px; font-family: monospace; font-size: 13px; line-height: 1.6; border: 1px solid #1f2937; color: #94a3b8; }
+    .row button.primary { background: #2563eb; border-color: #2563eb; }
+    .row button.secondary { background: #1f2937; }
+    .controls { display: flex; gap: 8px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <h2>SSE Streaming Tester (GET /chat/stream)</h2>
+
+  <div class="row">
+    <label for="agent">Agent</label>
+    <select id="agent">
+      <option value="doctor">doctor</option>
+      <option value="pharmacist">pharmacist</option>
+    </select>
+  </div>
+
+  <div class="row">
+    <label for="model">Model</label>
+    <input id="model" type="text" placeholder="e.g. llama3.3-ffm-70b-32k-chat" style="flex:1; padding: 6px 8px; border-radius: 4px; border: 1px solid #1f2937; background:#0b1220; color:#e2e8f0;" />
+  </div>
+
+  <div class="row">
+    <label for="baseUrl">Base URL</label>
+    <input id="baseUrl" type="text" placeholder="e.g. https://api-ams.twcc.ai/api/models" style="flex:1; padding: 6px 8px; border-radius: 4px; border: 1px solid #1f2937; background:#0b1220; color:#e2e8f0;" />
+  </div>
+
+  <div class="row">
+    <label for="apiKey">API Key</label>
+    <input id="apiKey" type="password" placeholder="Your API Key" autocomplete="off" style="flex:1; padding: 6px 8px; border-radius: 4px; border: 1px solid #1f2937; background:#0b1220; color:#e2e8f0;" />
+  </div>
+
+  <div class="row" style="align-items: flex-start;">
+    <label for="input" style="margin-top: 6px;">Input</label>
+    <textarea id="input" placeholder="Type the prompt you want to send. Example: reply sentence by sentence and emit every 0.5 seconds."></textarea>
+  </div>
+
+  <div class="row" style="align-items: flex-start;">
+    <label>Inspector</label>
+    <div id="detection-result" class="inspector">Waiting for input...</div>
+  </div>
+
+  <div class="row controls">
+    <button id="clean-text" class="primary">Remove spaces/newlines/tabs</button>
+    <button id="clean-spaces-only" class="secondary">Remove spaces only</button>
+    <button id="clean-newlines-only" class="secondary">Remove newlines only</button>
+  </div>
+
+  <div class="row controls">
+    <button id="start" class="primary">Start stream</button>
+    <button id="stop" class="secondary">Stop stream</button>
+    <span id="status" class="status"></span>
+  </div>
+
+  <pre id="output" placeholder="Streaming output will appear here..."></pre>
+
+  <script>
+    (function () {
+      const agentEl = document.getElementById('agent');
+      const inputEl = document.getElementById('input');
+      const modelEl = document.getElementById('model');
+      const baseUrlEl = document.getElementById('baseUrl');
+      const apiKeyEl = document.getElementById('apiKey');
+      const startBtn = document.getElementById('start');
+      const stopBtn = document.getElementById('stop');
+      const outputEl = document.getElementById('output');
+      const statusEl = document.getElementById('status');
+      const detectionResultEl = document.getElementById('detection-result');
+      const cleanTextBtn = document.getElementById('clean-text');
+      const cleanSpacesOnlyBtn = document.getElementById('clean-spaces-only');
+      const cleanNewlinesOnlyBtn = document.getElementById('clean-newlines-only');
+
+      let es = null;
+
+      function setStatus(text, cls) {
+        statusEl.textContent = text || '';
+        statusEl.className = `status ${cls || ''}`.trim();
+      }
+
+      function detectSpecialChars(text) {
+        const lines = text.split('\n');
+        const countMatches = (pattern) => (text.match(pattern) || []).length;
+        const result = [];
+
+        result.push(`Total chars: ${text.length}`);
+        result.push(`Newlines: ${lines.length - 1}`);
+        result.push(`Spaces: ${countMatches(/ /g)}`);
+        result.push(`Tabs: ${countMatches(/\t/g)}`);
+
+        if (lines.length > 1) {
+          result.push('Line lengths:');
+          lines.forEach((line, index) => {
+            result.push(`  #${index + 1}: ${line.length} chars`);
+          });
+        }
+
+        const specials = [];
+        for (let i = 0; i < text.length; i += 1) {
+          const ch = text[i];
+          if (ch === '\n') specials.push(`index ${i}: newline`);
+          else if (ch === '\t') specials.push(`index ${i}: tab`);
+          else if (ch === ' ') specials.push(`index ${i}: space`);
+        }
+        if (specials.length > 0) {
+          result.push('Special character positions:');
+          specials.forEach((item) => result.push(`  ${item}`));
+        }
+
+        return result.join('\n');
+      }
+
+      function updateDetection() {
+        const text = inputEl.value;
+        detectionResultEl.textContent = text.length === 0
+          ? 'Waiting for input...'
+          : detectSpecialChars(text);
+      }
+
+      function cleanText(type) {
+        const original = inputEl.value;
+        let cleaned = original;
+
+        switch (type) {
+          case 'all':
+            cleaned = original.replace(/[\s\r\n\t]+/g, '');
+            break;
+          case 'spaces':
+            cleaned = original.replace(/ /g, '');
+            break;
+          case 'newlines':
+            cleaned = original.replace(/[\r\n]+/g, '');
+            break;
+          default:
+            break;
+        }
+
+        inputEl.value = cleaned;
+        updateDetection();
+
+        const removed = original.length - cleaned.length;
+        if (removed > 0) {
+          alert(`Removed ${removed} characters.\n\nOriginal length: ${original.length}\nCleaned length: ${cleaned.length}`);
+        } else {
+          alert('No characters were removed.');
+        }
+      }
+
+      function appendChunk(text) {
+        if (!text) return;
+        outputEl.textContent += text;
+        outputEl.scrollTop = outputEl.scrollHeight;
+      }
+
+      function stopStream(message, cls) {
+        if (es) {
+          es.close();
+          es = null;
+        }
+        if (message) {
+          setStatus(message, cls);
+        }
+      }
+
+      function startStream() {
+        stopStream();
+        outputEl.textContent = '';
+        setStatus('Connecting...', '');
+
+        const agent = agentEl.value;
+        const userInput = inputEl.value || '';
+        const model = (modelEl.value || '').trim();
+        const baseUrl = (baseUrlEl.value || '').trim();
+        const apiKey = (apiKeyEl.value || '').trim();
+
+        const params = new URLSearchParams({
+          agent,
+          input: userInput,
+        });
+        if (model) params.set('model', model);
+        if (baseUrl) params.set('base_url', baseUrl);
+        if (apiKey) params.set('api_key', apiKey);
+
+        const url = `/chat/stream?${params.toString()}`;
+
+        try {
+          es = new EventSource(url);
+        } catch (err) {
+          stopStream('EventSource is not supported in this browser.', 'err');
+          return;
+        }
+
+        es.onopen = () => setStatus('Stream connected.', 'ok');
+        es.onmessage = (event) => appendChunk(event.data);
+        es.addEventListener('end', () => stopStream('Stream completed.', 'ok'));
+        es.addEventListener('error', (event) => {
+          if (event && typeof event.data === 'string' && event.data.length > 0) {
+            stopStream(`Server error: ${event.data}`, 'err');
+          }
+        });
+        es.onerror = () => stopStream('Stream interrupted.', 'err');
+      }
+
+      startBtn.addEventListener('click', startStream);
+      stopBtn.addEventListener('click', () => stopStream('Stream stopped.', ''));
+
+      inputEl.addEventListener('input', updateDetection);
+      inputEl.addEventListener('paste', () => setTimeout(updateDetection, 10));
+
+      cleanTextBtn.addEventListener('click', () => cleanText('all'));
+      cleanSpacesOnlyBtn.addEventListener('click', () => cleanText('spaces'));
+      cleanNewlinesOnlyBtn.addEventListener('click', () => cleanText('newlines'));
+
+      updateDetection();
+    })();
+  </script>
+</body>
+</html>
+
+

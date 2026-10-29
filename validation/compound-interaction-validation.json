@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "date": "2026-10-25",
+  "checks": [
+    "single_compound_and_original_frequency",
+    "immediate_low_glucose_and_pregnancy_alerts",
+    "model_independent_original_label_report",
+    "source_page_and_pdf_hash",
+    "repeat_input_merges",
+    "standalone_ingredients_not_assumed_equivalent",
+    "legacy_split_repair_preserves_history",
+    "unapproved_delivery_blocked"
+  ],
+  "scope": "One original-product-label interaction rule; not universal DDI coverage."
+}

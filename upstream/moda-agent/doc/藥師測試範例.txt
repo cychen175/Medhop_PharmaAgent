@@ -1,0 +1,16 @@
+患者基本資料
+年齡：72歲
+性別：女性
+診斷：高血壓、心房顫動、糖尿病、慢性腎臟病第3期、骨質疏鬆症
+處方藥品清單：
+
+Amlodipine 5 mg：每天1次，每次1錠
+Warfarin 2.5 mg：每天1次，每次1錠
+Metformin 500 mg：每天2次，每次1錠
+Furosemide 40 mg：每天1次，每次1錠
+Calcium carbonate 500 mg：每天2次，每次1錠
+
+缺貨藥品清單：Warfarin、Metformin
+替代藥品清單：
+  Warfarin替代：Rivaroxaban 15 mg、Apixaban 5 mg
+  Metformin替代：Gliclazide 80 mg、Sitagliptin 100 mg

@@ -1,0 +1,449 @@
+{
+  "reference": "C:\\Users\\labpc\\Downloads\\medhop-agent-demo.html",
+  "medhop_root": "C:\\Users\\labpc\\Downloads\\MedLink_PharmaAgent",
+  "repositories": [
+    {
+      "name": "moda-agent",
+      "url": "https://github.com/adi-gov-tw/moda-agent",
+      "commit": "463818a0f85010e435eecc879bb570b3c001dc26"
+    },
+    {
+      "name": "moda-agent-frontend",
+      "url": "https://github.com/adi-gov-tw/moda-agent-frontend",
+      "commit": "cc4bd25c9d51741033dbc70e42d898448d94ae64"
+    },
+    {
+      "name": "moda-agent-api-relay",
+      "url": "https://github.com/adi-gov-tw/moda-agent-api-relay",
+      "commit": "df13aa32ec845fdfe86bfa9234e88a5d9e30ed3a"
+    }
+  ],
+  "pdfs": [
+    {
+      "file": "A000015421.pdf",
+      "sha256": "5ca49026687aa0b108224132bee8ca9f7677d5959837580d95837463b52aab9e"
+    },
+    {
+      "file": "A000015435.pdf",
+      "sha256": "5ca49026687aa0b108224132bee8ca9f7677d5959837580d95837463b52aab9e"
+    },
+    {
+      "file": "A000059100.pdf",
+      "sha256": "df6f96627830e6f56ebc3dde4922541d19b257c49c11409a7ac4668ac97c7259"
+    },
+    {
+      "file": "A0000591G0.pdf",
+      "sha256": "df6f96627830e6f56ebc3dde4922541d19b257c49c11409a7ac4668ac97c7259"
+    },
+    {
+      "file": "A000060100.pdf",
+      "sha256": "79ec6fd0a17c46810d33a735545ea1926fe86e4516aa3c74c41d3fb0f744f769"
+    },
+    {
+      "file": "A0000601G0.pdf",
+      "sha256": "79ec6fd0a17c46810d33a735545ea1926fe86e4516aa3c74c41d3fb0f744f769"
+    },
+    {
+      "file": "A000072100.pdf",
+      "sha256": "4a76541fcf2586bf78997a0a3d7682b6cadf210f9d3f994521f3a516b4ca785a"
+    },
+    {
+      "file": "A000076100.pdf",
+      "sha256": "d741687f54569d356b57d8a34df3a90819456e05f43483443143ad854f46078e"
+    },
+    {
+      "file": "A000081100.pdf",
+      "sha256": "69c58b94e5c1b484174349305773ec947b578e42bfd8163964403f9fdb48daaf"
+    },
+    {
+      "file": "A000090100.pdf",
+      "sha256": "d38ddc54ae3d10691bfdb4f9b24b1885dba43c56b4b859ee9c036e192ff0ba70"
+    },
+    {
+      "file": "A000096100.pdf",
+      "sha256": "e979b345297a01f690b65d7c81cc86ff22dd93978280c7af84090553eba25892"
+    },
+    {
+      "file": "A000106100.pdf",
+      "sha256": "89f2acfff8309d587b96ef1fd13bb0097039a49f599681d2f818aad48dd9c485"
+    },
+    {
+      "file": "A000111100.pdf",
+      "sha256": "b4602777c8e33035aed5c0e5c01b55360eeb8e9a638299ecd9962eb831a47c98"
+    },
+    {
+      "file": "A000118100.pdf",
+      "sha256": "66429695d1a8374231e6cb8c61dad7092b5d7693577e984083df4b8ecdd7d095"
+    },
+    {
+      "file": "A0001181G0.pdf",
+      "sha256": "66429695d1a8374231e6cb8c61dad7092b5d7693577e984083df4b8ecdd7d095"
+    },
+    {
+      "file": "A000119100.pdf",
+      "sha256": "b0ac0679b9e6c8c5847ad0806f8ff66c1ad64091d65992c94b27ee4933b8a9ef"
+    },
+    {
+      "file": "A0008441G0.pdf",
+      "sha256": "13549321878f42b05d59b58850d36c49586b4a9e60e734d693c2fd7b1e3a59e6"
+    },
+    {
+      "file": "A0010011G0.pdf",
+      "sha256": "8a752201d849853ec6e7c1cf7c9e8635b4600067007094964e6b5b8602192169"
+    },
+    {
+      "file": "A0010471G0.pdf",
+      "sha256": "dd7374408765280a54ea10859070dc3f693829987c0570185ebf1aefc37f5d6c"
+    },
+    {
+      "file": "A0011541G0.pdf",
+      "sha256": "1213f99c17519b5471a103be483d11fc4441945e255b390eb4108b37676ff9d0"
+    },
+    {
+      "file": "A0014203CH.pdf",
+      "sha256": "e170e3e9f2967c603fdb3e84faf2e3420a4df97354b930ceee2b34fd460a63a3"
+    },
+    {
+      "file": "A0016461G0.pdf",
+      "sha256": "fcc3c9c3363e03d865a90a1cebf0233fe797646026424427e733d56b6fb8b57b"
+    },
+    {
+      "file": "A0016731G0.pdf",
+      "sha256": "8e215c1c0c59f73c8176be52ea75cd1d92645238da96a3a96a255a90e02f4a01"
+    },
+    {
+      "file": "A0019411G0.pdf",
+      "sha256": "957055300f35e0351c0c47d4d7d05f076272b59d1ba0de5aba7f56425f34d35a"
+    },
+    {
+      "file": "A0019461G0.pdf",
+      "sha256": "e695e1a69bddd5d7de8a0c5e2043bf435d141c99a0053d2fcb178a370bec840a"
+    },
+    {
+      "file": "A0019631G0.pdf",
+      "sha256": "0927a06417d0a939397d3b5dae7cc685267440f88a22df32f23996ebd50d9341"
+    },
+    {
+      "file": "A0021401G0.pdf",
+      "sha256": "f8c64ac1443ae87fe885c1ced4bcb703ccb683b6bd8209b9e20e087589d1e78b"
+    },
+    {
+      "file": "A0022441G0.pdf",
+      "sha256": "e66f19a2e9641739a04850af998c811856fbcdb70942ef4cad22dde71fd2de25"
+    },
+    {
+      "file": "A0023681G0.pdf",
+      "sha256": "97d66ed029fe9c0dcdbb39e28c00feaeed89d57122a3be770c2df3928d4a2c76"
+    },
+    {
+      "file": "A0025731G0.pdf",
+      "sha256": "bf77b088dee32be13ab51e01ea874e36f71b5dc565ac395d487f932d1fb77d3c"
+    },
+    {
+      "file": "A0028631G0.pdf",
+      "sha256": "1d842306aaa4fef24fb6d2e1c118f205597bf60e6960dd318e44b87034c1e663"
+    },
+    {
+      "file": "A0030981G0.pdf",
+      "sha256": "019b27604290ae02077b328ae6ae7ec9bcf18020f1eeec825385ef43c3105106"
+    },
+    {
+      "file": "A0032451G0.pdf",
+      "sha256": "5cfdcb1e9b9fc21f4da7ce0a65b999518d5c24ba9297f03c96f184b69efe90ee"
+    },
+    {
+      "file": "A0032861G0.pdf",
+      "sha256": "634f177b462cc8b145f64238bbea6608edcc1b803370c31f84fa818ed0bad0eb"
+    },
+    {
+      "file": "A0033181G0.pdf",
+      "sha256": "793b19d5b78b9a74afec520d5d1e5bae44f885e5e5e1b9b046186829acb59af4"
+    },
+    {
+      "file": "A0033651G0.pdf",
+      "sha256": "ca9407608b9b981306a2797dfc912a067d56056a458cbdaf5a257fe8e9d57b39"
+    },
+    {
+      "file": "A0033881G0.pdf",
+      "sha256": "a0ee6cd867f8ad24284a0798d2efb0571807f10d4790ce8edbed6c9398619e70"
+    },
+    {
+      "file": "A0042211G0.pdf",
+      "sha256": "444fd9000222c30afc66a71555c79e9294447b9c1cf36bd1861376daa2e3f367"
+    },
+    {
+      "file": "A0042761G0.pdf",
+      "sha256": "d64eb09e04d4765a8b07685eb89ae0ca856cf6d7539bc5aeba326ad3452fd1b8"
+    },
+    {
+      "file": "A0047151G0.pdf",
+      "sha256": "bf1106efc1bb67bbb65f20743cda6dc1c131ebfbeb02f7bfd1a5486865ff68f5"
+    },
+    {
+      "file": "A0047371G0.pdf",
+      "sha256": "ca68475334267383bdcd0c78f25c55921d17cd5c92ea768652833796e05f8a87"
+    },
+    {
+      "file": "A0048991G0.pdf",
+      "sha256": "bd1f626ab7fc49d506d33643931e2a0935f9424fb5ecc85576569e8b25c92d97"
+    },
+    {
+      "file": "A0049191G0.pdf",
+      "sha256": "6562d8c9729b24ae4d6c5564fa31032875e3c62a95939b4a783e58eeb62e4f8c"
+    },
+    {
+      "file": "A0049631G0.pdf",
+      "sha256": "4df3e524870e3ecd13eb2cb25626606ace89f3968ec209e3843c3f4a874b4fe8"
+    },
+    {
+      "file": "A0049951G0.pdf",
+      "sha256": "9c418961a8b944c02f02ed284ba5751cc8559efa66a154cf96a2d58d649af54c"
+    },
+    {
+      "file": "A0050451G0.pdf",
+      "sha256": "92cdb0655f667f4dc3040309032cfdaacffc272f3fe4e3c28bd3320592d562a7"
+    },
+    {
+      "file": "A0058111G0.pdf",
+      "sha256": "bfecb2f2a323f432643047a3f96ebd68868d58924466852b61bccb470b2a8777"
+    },
+    {
+      "file": "A0058131G0.pdf",
+      "sha256": "9732cf8bea265668c55c2c393d58d2745347464c1185fddbd91a00daf4d699c5"
+    },
+    {
+      "file": "A0059251G0.pdf",
+      "sha256": "a1356339b9a61df8a2fe202c2d1b60e1abee864da48bce96da055e3ea727feda"
+    },
+    {
+      "file": "A0059541G0.pdf",
+      "sha256": "a4d7b04d781c139840fe46dc0c50a1a38e9b16d9681dfac54175655c61d6cb3e"
+    },
+    {
+      "file": "A0067471G0.pdf",
+      "sha256": "a3a7a944dd01cd6048f7c0d28222372727b87e1c7027ce52f62ed709d94c87de"
+    },
+    {
+      "file": "A0071401G0.pdf",
+      "sha256": "3a6a62f6723f4bfb85aadcd3ddafec128840e660726060aa61ff695351cb7b17"
+    },
+    {
+      "file": "A0073961G0.pdf",
+      "sha256": "0102f40db6f807b26d752179087243d0c0ebd5a13ff3a76adeafbac61bf948f9"
+    },
+    {
+      "file": "A0075431G0.pdf",
+      "sha256": "d9736ab8eb9c48e04435598e9a6d919c89103f7b886361ef5daf55191af087d2"
+    },
+    {
+      "file": "A0079441G0.pdf",
+      "sha256": "0706c4081bdb151c326df2c95061840b9100ef6d0184fae93968ecc173577fb0"
+    },
+    {
+      "file": "A0087531G0.pdf",
+      "sha256": "30ee9e5fe776d4fae573b3aa19403fae6b07c00e7825f3d092b67bde06015050"
+    },
+    {
+      "file": "A0090991G0.pdf",
+      "sha256": "2a99e1fbc35e9715047164a6ca221e5341fb5e245d1760a9ccf0ab738e11b985"
+    },
+    {
+      "file": "A0091021G0.pdf",
+      "sha256": "e685f9e5be9ff4a8fd07ac59c52824abd0d55ea6a135beb2a3388b3970600002"
+    },
+    {
+      "file": "A0092911G0.pdf",
+      "sha256": "2b5a52c439c650d6cb61602db10511645c63738d532e47370a99480d2ba3155b"
+    },
+    {
+      "file": "A0093341G0.pdf",
+      "sha256": "6426e12a9ebafde31fa93a96f2944028774aaa7c8870023b06988f9cc4d3ad56"
+    },
+    {
+      "file": "A0096091G0.pdf",
+      "sha256": "1a01e9f7a271883e433f5a8822992463fcdce14c3f75e678a60c33548179f2b5"
+    },
+    {
+      "file": "A0096191G0.pdf",
+      "sha256": "6069b1410ee898076de2d41d38872db3996a6f86ab58c45ee937e3e4fbd69cd8"
+    },
+    {
+      "file": "A0099151G0.pdf",
+      "sha256": "aa99c4a8546dfae7c1da0f8174f5d69c56934d5e415b593e3da4e5567b428f0f"
+    },
+    {
+      "file": "A0099831G0.pdf",
+      "sha256": "08938d88a5785302e3718e14ba22bc11b98bb8bbaab46466f3d5fb82e99bbb52"
+    },
+    {
+      "file": "A0099871G0.pdf",
+      "sha256": "f9be3ace7851050f686f347e5b66289c79b0c60396dd3d5009b665d0f307e108"
+    },
+    {
+      "file": "A0101681G0.pdf",
+      "sha256": "d4e96cf69efa6dbc7a77aed8b41d03a678656d43026f847c315f2f404a684158"
+    },
+    {
+      "file": "A0102071G0.pdf",
+      "sha256": "403a9ab6f445665dce407a6aea565339d582a6d69c64cb98722b8bbf0ba35155"
+    },
+    {
+      "file": "A0102491G0.pdf",
+      "sha256": "4ecd2eb2a8d4f0d7d03894380e2bb9d2a0b0bf65f87ae125fef9205a2051086f"
+    },
+    {
+      "file": "A0102821G0.pdf",
+      "sha256": "52000eb636d5eb19f06a2e4a84ff87077121e5ff6f2ac20a05d257d2a575dd06"
+    },
+    {
+      "file": "A0103581G0.pdf",
+      "sha256": "917ed85348408b1efb736169db5bdb4bab4aa899ad6584c8e2d1921f2ab480be"
+    },
+    {
+      "file": "A0103741G0.pdf",
+      "sha256": "9545cfe973b06c04fad2aa4744e159900cbbcd68c1aed8d178f422b2882b57be"
+    },
+    {
+      "file": "A0104461G0.pdf",
+      "sha256": "90b16eaf4b6a084df2b689e701fc3a935405a046fb7a20872aaa908f772b8ba0"
+    },
+    {
+      "file": "A0104871G0.pdf",
+      "sha256": "6204f25904262d5618e6990f15dac9f22444cb74c7a50863e5462b332c341d6a"
+    },
+    {
+      "file": "A0104891G0.pdf",
+      "sha256": "c0bb2f2869ef461b5eda7e4c33e2185ddf84403a3e4731f84c744df07da118f6"
+    },
+    {
+      "file": "A0107773CH.pdf",
+      "sha256": "bc541cb4d35015ee3b24d6492063661b5e16637f394838a3ea5fe8eb0b7480c7"
+    },
+    {
+      "file": "A0108191G0.pdf",
+      "sha256": "94a2486a4f6a240a9efa0a979df8157142aae01f72470bb834aaa632cbbf36c1"
+    },
+    {
+      "file": "A0109171G0.pdf",
+      "sha256": "10f07fc4f975f9c422b86c4a52d43374a27a866e7ab6f6248ba18744dd917c83"
+    },
+    {
+      "file": "A0111541G0.pdf",
+      "sha256": "81c27aa0b4485d5f244a28fb5e1d51b6d01fe9393f53d7bc5733c5f773edd9f2"
+    },
+    {
+      "file": "A0111931G0.pdf",
+      "sha256": "e08f385c88fa23b429790e0c6731ff711095412fa05527d9f6cf64ac1924aafd"
+    },
+    {
+      "file": "A0112241G0.pdf",
+      "sha256": "dccf6998b41caf4ecbe88e0d3a4f2e9028320b286c81a49156e6e93c4bc7e172"
+    },
+    {
+      "file": "A0113171G0.pdf",
+      "sha256": "014ed34250a8eeedf46949c689bddaa677d15031176ad03edf7329f506d69486"
+    },
+    {
+      "file": "A0116551G0.pdf",
+      "sha256": "f8b5d5aa4ae1aaacf31788d62a4c1bb9390e2f2946e08d97372345fdb1043f6f"
+    },
+    {
+      "file": "A0120511G0.pdf",
+      "sha256": "56ed633cd2989997d325f7bc358ffef5510cb1f1a6da4de759fd41c0c58d0248"
+    },
+    {
+      "file": "A0120811G0.pdf",
+      "sha256": "08d856c036ace5aa0eb99149112a293ca53e243ace758aee4c0fa615342b94de"
+    },
+    {
+      "file": "A0124581G0.pdf",
+      "sha256": "7b748dede1a6d88d795ab45fc3818a054b05ec5997dea4617d349b93f14b0abd"
+    },
+    {
+      "file": "A0127031G0.pdf",
+      "sha256": "e4cbe1ca1db20b18e44bce33986dbd736a541351e2f16012a1452a459094f7f1"
+    },
+    {
+      "file": "A0128031G0.pdf",
+      "sha256": "69c6801f452d850062777299cd418645468506097639eba00376b4f7dbd1606a"
+    },
+    {
+      "file": "A0128281G0.pdf",
+      "sha256": "3e31b8e8aebe9bd7d648448e7eb82287bffd969fc4adfc530beb765a25b57073"
+    },
+    {
+      "file": "A0130831G0.pdf",
+      "sha256": "a3f17460adda8d71ccf3154865204dcfe545647d16af9c5b08086c93f897df9f"
+    },
+    {
+      "file": "A0130911G0.pdf",
+      "sha256": "556b35a4737d7616304895bb6f9fa4c244cfeb469b468c54d51f494088fde07d"
+    },
+    {
+      "file": "A0136341G0.pdf",
+      "sha256": "d6a5a23dc99754a63e3bf30b4c7aef581ed88a24635e2f45afdc8d53ec71bd47"
+    },
+    {
+      "file": "A0136501G0.pdf",
+      "sha256": "e61b5f88d36025893bdcfe9d73c6bf87be2358b3a507cd32fc100f9218c65042"
+    },
+    {
+      "file": "A0136641G0.pdf",
+      "sha256": "fdd3ec9fcc24bc671e09d02b167aa845876347d630cd53cfdc26d2662704ee1a"
+    },
+    {
+      "file": "A0137781G0.pdf",
+      "sha256": "390ea0157cf0ff38f8bbcda2a76759ac3e4960666ac3776e3d0af35e86b2bf6b"
+    },
+    {
+      "file": "A0138011G0.pdf",
+      "sha256": "569104ecee084f3df6279ed1072cd4c96ae71fce8414a2f2efb93c20bf596d43"
+    },
+    {
+      "file": "A0139141G0.pdf",
+      "sha256": "e70bc9353cfec1be241305625dec266ca817185d4b77497b5d032c2eef087b6b"
+    },
+    {
+      "file": "A0141541G0.pdf",
+      "sha256": "0ff07215669f14102519e633c1ec4415ee57d2f9352ae59334a06ca8277ff1e9"
+    },
+    {
+      "file": "A0141841G0.pdf",
+      "sha256": "d680c597a0104c4af1e82310a6840d7d261527481ca027d27fe6bf2a4d5afd00"
+    },
+    {
+      "file": "A0142281G0.pdf",
+      "sha256": "badedf389e2bd14a9d33bbf216e5bbdaffcfaa0c70d902f39900c1b84cace560"
+    },
+    {
+      "file": "AC59887100.pdf",
+      "sha256": "a680b0837826a6d0f602af60f1eb40a76764a6dd76df9934e0dd6a6070626de1"
+    }
+  ],
+  "extraction": {
+    "indexed_pages": 187,
+    "ocr_pages": 65,
+    "unreadable_pages": [
+      {
+        "file": "A0102491G0.pdf",
+        "page": 1,
+        "reason": "OCR did not yield sufficient text"
+      },
+      {
+        "file": "A0120811G0.pdf",
+        "page": 1,
+        "reason": "OCR did not yield sufficient text"
+      },
+      {
+        "file": "A0136641G0.pdf",
+        "page": 3,
+        "reason": "OCR did not yield sufficient text"
+      },
+      {
+        "file": "A0137781G0.pdf",
+        "page": 1,
+        "reason": "OCR did not yield sufficient text"
+      }
+    ]
+  }
+}

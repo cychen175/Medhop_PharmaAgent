@@ -1,0 +1,26 @@
+name: medhop-pharmaagent
+
+services:
+  pharmacy:
+    image: medhop-pharmaagent:latest
+    build: .
+    ports:
+      - "127.0.0.1:8502:8502"
+    environment:
+      MODEL_URL: "http://host.docker.internal:13305/api/v1"
+      MODEL: "qwen3-it-4b-FLM"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - pharmacy-records:/app/runtime
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/opt/python314/bin/python3.14", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8502/api/patients',timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 90s
+      retries: 3
+volumes:
+  pharmacy-records:
+    # Keep the existing named data volume when changing the Compose project name.
+    name: medlink-integrated_pharmacy-records

@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "dual_drafts_and_handoff",
+    "unapproved_and_cross_session_delivery_blocked",
+    "unresolved_items_blocked",
+    "pending_prescriber_contact_blocks_delivery",
+    "explicit_pharmacist_approval_delivery",
+    "approved_report_immutable",
+    "patient_version_change_blocks_old_delivery",
+    "masked_name_hmac_lookup",
+    "identity_original_encrypted_at_rest",
+    "official_nonrevoked_unexpired_catalog"
+  ],
+  "all_passed": true
+}

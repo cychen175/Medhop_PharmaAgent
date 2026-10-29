@@ -1,0 +1,4 @@
+graphrag==3.0.8
+litellm==1.82.6
+PyYAML>=6,<7
+pandas>=2.2,<3

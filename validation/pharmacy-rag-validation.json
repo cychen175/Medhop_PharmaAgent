@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "checks": [
+    "real_BM25_original_chunks_and_offsets",
+    "verbatim_quote_page_traceability",
+    "medication_details_use_RAG",
+    "review_retrieval_context_and_existing_label_warning",
+    "model_not_run_honestly_reported",
+    "pharmacist_report_lists_RAG_sources",
+    "unknown_drug_no_borrowed_sources",
+    "empty_retrieval_does_not_scan_full_corpus",
+    "unapproved_delivery_blocked"
+  ],
+  "live_patients_created": 0
+}

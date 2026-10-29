@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>藥你安心：藥事安全Agent</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="/reference.css?v=20261028-pde5-warning-12"><link rel="stylesheet" href="/app.css?v=20261028-pde5-warning-12"><link rel="stylesheet" href="/workspace.css?v=20261028-pde5-warning-12">
+<script src="/workflow.js?v=20261028-pde5-warning-12" defer></script><script src="/app.js?v=20261028-pde5-warning-12" defer></script><script src="/compliance.js?v=20261028-pde5-warning-12" defer></script><script src="/workspace.js?v=20261028-pde5-warning-12" defer></script>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><img class="brand-logo" src="/logo.png" alt="藥你安心標誌"><span>藥你安心：藥事安全Agent</span></div>
+  </header>
+  <main>
+    <section class="chat" aria-label="對話與檢索">
+      <div class="log" id="log"><div class="log-inner" id="logInner" role="log" aria-live="polite"></div></div>
+      <form class="composer" id="composer" autocomplete="off">
+        <div class="field"><textarea id="input" rows="2" placeholder="描述病人狀況或用藥情形" aria-label="訊息" maxlength="12000"></textarea><button class="send" id="send" type="submit" aria-label="送出" disabled><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 13V3M3.5 7.5 8 3l4.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+        <div class="composer-foot"><span>Enter 送出 · Shift + Enter 換行</span></div>
+      </form>
+    </section>
+    <aside class="record" aria-label="病歷">
+      <div class="rec-top"><div><b>病歷</b><span class="record-state" id="recordState"></span></div><button class="text-btn" id="editRecord">換下一位</button></div>
+      <div id="patientPicker" class="patient-picker"><label class="control-label">查找既有病歷<input id="patientSearch" placeholder="姓名或病歷號" maxlength="80"></label><select id="patientSelect" aria-label="選擇既有病歷"><option value="">選擇病歷…</option></select></div>
+      <div class="rec-scroll" id="recScroll"></div>
+    </aside>
+  </main>
+</div>
+<dialog id="recordDialog" aria-labelledby="recordTitle"><form id="recordForm"><div class="dialog-head"><h2 id="recordTitle">確認病歷內容</h2><button class="close-btn" type="button" data-close="recordDialog" aria-label="關閉病歷視窗">×</button></div><p class="muted">保留你提供的原始內容。確認後才會存入這個瀏覽器的本機病歷。</p><label class="control-label">資料來源<input id="recordSource" maxlength="1000" value="使用者輸入"></label><label class="control-label">病歷原文<textarea id="recordText" rows="15" maxlength="12000" required placeholder="輸入病人資料、病史、過敏史與處方。未提供的資料請留空。"></textarea></label><p class="form-error" id="recordError" role="alert"></p><div class="dialog-actions"><button class="btn btn-quiet" type="button" data-close="recordDialog">取消</button><button class="btn btn-primary" id="saveRecord" type="submit">確認，儲存病歷</button></div></form></dialog>
+<dialog id="evidenceDialog" aria-labelledby="evidenceTitle"><div class="dialog-head"><h2 id="evidenceTitle">來源原文</h2><button class="close-btn" data-close="evidenceDialog" aria-label="關閉原文視窗">×</button></div><div id="evidenceContent"></div></dialog>
+<div id="toast" role="status"></div>
+</body></html>

@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "checks": [
+    "exact_short_message_triggers_immediate_alert_without_brand_or_request",
+    "one_medication_no_dose_still_checked",
+    "original_label_quote_and_page_attached",
+    "single_medication_report_finishes_without_model_wait",
+    "pregnancy_contraindication_in_report_and_handoff",
+    "unapproved_delivery_blocked",
+    "condition_change_rechecks_and_invalidates_old_report",
+    "unknown_pregnancy_not_asserted_as_pregnant",
+    "unindexed_drug_not_assumed_safe_or_contraindicated",
+    "later_pregnancy_input_rechecks_existing_single_medication"
+  ],
+  "live_patients_created": 0,
+  "source_indexed_rules": 1,
+  "coverage": "Only indexed original-label rules; does not establish universal pregnancy medication safety."
+}

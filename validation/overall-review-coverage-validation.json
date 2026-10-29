@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "date": "2026-10-28",
+  "checks": [
+    "overall_resolution_single_textarea",
+    "read_only_original_reason_scope_preserved",
+    "scope_mismatch_and_short_note_rejected",
+    "pending_contact_stale_version_and_unapproved_delivery_still_blocked",
+    "no_automatic_per_item_resolution",
+    "coverage_API_658_keys_589_DRUG_nodes",
+    "Lamotrigine_and_Carbamazepine_unmapped_Phentoyin_present",
+    "four_example_paths_have_original_support",
+    "UI_fields_and_coverage_dialog_verified"
+  ],
+  "live_patients_created": 0
+}

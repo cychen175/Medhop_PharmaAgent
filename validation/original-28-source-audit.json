@@ -1,0 +1,94 @@
+{
+  "checked_on": "2026-10-25",
+  "requested_capability": "還原原版全部 28 項藥事檢核",
+  "status": "awaiting_original_materials",
+  "complete_restoration": false,
+  "repos": [
+    {
+      "name": "moda-agent",
+      "url": "https://github.com/adi-gov-tw/moda-agent",
+      "head": "463818a0f85010e435eecc879bb570b3c001dc26",
+      "shallow": false,
+      "commits_checked": 2,
+      "history": [
+        {
+          "commit": "463818a0f85010e435eecc879bb570b3c001dc26",
+          "file_count": 121,
+          "required_modules_found": []
+        },
+        {
+          "commit": "62406a68da247d7ef176df0e6c4ee48efacf3929",
+          "file_count": 9,
+          "required_modules_found": []
+        }
+      ],
+      "required_modules_found": []
+    },
+    {
+      "name": "moda-agent-frontend",
+      "url": "https://github.com/adi-gov-tw/moda-agent-frontend",
+      "head": "cc4bd25c9d51741033dbc70e42d898448d94ae64",
+      "shallow": false,
+      "commits_checked": 2,
+      "history": [
+        {
+          "commit": "cc4bd25c9d51741033dbc70e42d898448d94ae64",
+          "file_count": 83,
+          "required_modules_found": []
+        },
+        {
+          "commit": "d232c11e3c53f427fb89c4a1a6a12faf097b7abd",
+          "file_count": 9,
+          "required_modules_found": []
+        }
+      ],
+      "required_modules_found": []
+    },
+    {
+      "name": "moda-agent-api-relay",
+      "url": "https://github.com/adi-gov-tw/moda-agent-api-relay",
+      "head": "df13aa32ec845fdfe86bfa9234e88a5d9e30ed3a",
+      "shallow": false,
+      "commits_checked": 3,
+      "history": [
+        {
+          "commit": "df13aa32ec845fdfe86bfa9234e88a5d9e30ed3a",
+          "file_count": 54,
+          "required_modules_found": []
+        },
+        {
+          "commit": "a6d5c99bef538d0588b6e1b66835a517904dc6b8",
+          "file_count": 55,
+          "required_modules_found": []
+        },
+        {
+          "commit": "c6a2cd1379b742d6523a7d220ce491c4eaad2aa2",
+          "file_count": 9,
+          "required_modules_found": []
+        }
+      ],
+      "required_modules_found": []
+    }
+  ],
+  "missing_runtime_modules": [
+    "utils/prompts.py",
+    "utils/llm_client.py"
+  ],
+  "original_check_definitions": null,
+  "no_medical_checklist_invented": true,
+  "runtime_changed": false,
+  "needed_materials": [
+    "原作者完整 utils 資料夾，尤其 prompts.py 與 llm_client.py",
+    "原版 28 項分析的逐項名稱、判定準則、輸出格式及測試案例"
+  ],
+  "official_entry": "https://github.com/adi-gov-tw/moda-agent/blob/463818a0f85010e435eecc879bb570b3c001dc26/pharmacist_main.py",
+  "official_backend_refs": {
+    "branches": 1,
+    "tags": 0,
+    "releases": 0,
+    "forks": 0,
+    "commits?path=utils/prompts.py": 0,
+    "commits?path=utils/llm_client.py": 0
+  },
+  "metadata_sha256": "850ebd5a94cdda22c7878f6c798fc7bab10c3a75c7e452785fe427fa16f54687"
+}

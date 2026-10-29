@@ -1,0 +1,10 @@
+.session-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 85vh; display:block;
+}
+
+.session {
+  display: flex;
+  width: 270px;
+}

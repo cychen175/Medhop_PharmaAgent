@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "immediate_warning": true,
+  "completed_review": true,
+  "saved_patient_selection": true,
+  "negative_controls": [
+    "single drug",
+    "stopped drug",
+    "unrelated pair"
+  ],
+  "source": "https://labeling.pfizer.com/showlabeling.aspx?id=652",
+  "section": "5.7",
+  "verified_on": "2026-10-28",
+  "production_data_modified": false
+}

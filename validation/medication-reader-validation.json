@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "labels": "藥物說明",
+  "medication_order": [
+    "Clopidogrel",
+    "Aspirin",
+    "Atorvastatin"
+  ],
+  "next_button_selected": "Aspirin",
+  "candidate_panels_default_open": 0,
+  "original_text_panels_default_open": 0,
+  "step_row_width_measured_px": 676,
+  "short_step_title_width_measured_px": 84,
+  "step_layout": "horizontal content outside the absolutely positioned marker",
+  "browser_console_errors": 0,
+  "isolated_test_database": true,
+  "production_records_created_by_test": 0
+}

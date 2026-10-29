@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-25",
+  "removed": [
+    "header model name and general source-info entry",
+    "composer source/pending hint",
+    "welcome eyebrow and title",
+    "start-input button"
+  ],
+  "retained": [
+    "patient input and lookup",
+    "source citations within assessment",
+    "pharmacist review and delivery gates"
+  ],
+  "browser_console_errors": 0,
+  "browser_verified": true,
+  "prebuilt_patients": false
+}

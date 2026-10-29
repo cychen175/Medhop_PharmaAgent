@@ -1,0 +1,14 @@
+患者資料
+姓名：周○○
+年齡：69歲
+科別：消化內科
+診斷：肝惡性腫瘤、肝硬化、慢性C型肝炎、尿路感染
+處方藥物
+AUGMENTIN TAB 1G：1錠，每12小時服用1次（Q12H）
+NAPROXEN (U-Ritis) 250MG：1錠，每日2次（BID）
+EXFORGE (AMLODIPIN + Valsartan)：1錠，每天早晨服用（QD AM）
+LORAZEPAM (Larpam) 2MG：1錠，每晚睡前服用（OHS）
+160mg Valsartan (Diovan)：1錠，每天早晨服用（QD AM）
+SILYMARIN 150MG：1顆，每日3次（TID）
+ALINAMIN F：1錠，每日2次（BID）
+NATRILIX SR ：1錠，每天早晨服用（QD AM）

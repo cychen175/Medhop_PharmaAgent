@@ -1,0 +1,14 @@
+<div class="container-fluid app-container font-noto-sans-tc" style="padding-bottom: 20px;">
+  <div class="d-flex" id="wrapper" style="border-radius: 1rem;overflow: hidden;">
+    <app-sidebar></app-sidebar>
+    <div class="container-fluid" style="padding:0">
+      <app-header></app-header>
+      <app-snackbar></app-snackbar>
+      <div class="router row content-container">
+        <div class="col">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

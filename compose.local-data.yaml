@@ -1,0 +1,6 @@
+services:
+  pharmacy:
+    volumes:
+      - type: bind
+        source: ./runtime
+        target: /app/runtime

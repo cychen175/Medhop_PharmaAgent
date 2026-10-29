@@ -1,0 +1,709 @@
+{
+  "verified_on": "2026-10-25",
+  "specification": "附件1-1_系統概述文件_藥你安心_初賽初版.docx",
+  "checks": {
+    "governance-validation": {
+      "checks": [
+        "dual_drafts_and_handoff",
+        "unapproved_and_cross_session_delivery_blocked",
+        "unresolved_items_blocked",
+        "pending_prescriber_contact_blocks_delivery",
+        "explicit_pharmacist_approval_delivery",
+        "approved_report_immutable",
+        "patient_version_change_blocks_old_delivery",
+        "masked_name_hmac_lookup",
+        "identity_original_encrypted_at_rest",
+        "official_nonrevoked_unexpired_catalog"
+      ],
+      "all_passed": true
+    },
+    "autogen-validation": {
+      "status": "completed",
+      "trace": [
+        {
+          "tool": "consult_pharmacy_agent",
+          "result": "已委派原 moda-agent AssistantAgent"
+        },
+        {
+          "tool": "read_patient_medications",
+          "result": "2 項用藥"
+        },
+        {
+          "tool": "retrieve_pharmacy_evidence",
+          "result": "1 組來源核對"
+        }
+      ],
+      "upstream": "upstream/moda-agent/agent.py",
+      "compatibility_prompts": true,
+      "original_28_checks": false
+    },
+    "graphrag-validation": {
+      "status": "completed",
+      "engine": "original MedHop GraphRAG local search",
+      "sources": 30,
+      "semantic_medical_validation": false
+    },
+    "asgi-validation": {
+      "python": "3.14.7",
+      "status": "done",
+      "review": "hrcNARDjFyHtsN_2ITC-lgMl",
+      "patient": null,
+      "agent": {
+        "status": "completed",
+        "trace": [
+          {
+            "tool": "consult_pharmacy_agent",
+            "result": "已委派原 moda-agent AssistantAgent"
+          },
+          {
+            "tool": "read_patient_medications",
+            "result": "5 項用藥"
+          },
+          {
+            "tool": "retrieve_pharmacy_evidence",
+            "result": "10 組來源核對"
+          }
+        ],
+        "upstream": "upstream/moda-agent/agent.py",
+        "compatibility_prompts": true,
+        "original_28_checks": false
+      },
+      "pair_count": 10,
+      "report_state": "handoff",
+      "pending_items": 29,
+      "delivery_block": true,
+      "pydantic_invalid_boolean_block": true,
+      "audit": true
+    },
+    "research-api-validation": {
+      "job": "HnnAwPyPMIjCBOFnaD8fGx31",
+      "state": "done",
+      "research_status": "completed",
+      "source_count": 30,
+      "native_citations": "research_requires_review",
+      "patient_history_saved": true
+    },
+    "syntax": "Python and JavaScript passed",
+    "docker_compose_config": "passed; daemon unavailable; image not built",
+    "source_benchmark_30_runs": {
+      "label": "local-source-check",
+      "mode": "source-check",
+      "warmup_runs": 2,
+      "measured_runs": 30,
+      "latency_p50_s": 0.4782915500109084,
+      "latency_p95_s": 0.5247375899925828,
+      "source_contract_accuracy": 1.0,
+      "peak_process_tree_rss_bytes": 220237824,
+      "power": null,
+      "hardware_execution_verified": false,
+      "clinical_accuracy": null,
+      "gpu_npu_utilization": null,
+      "limits": [
+        "Source-contract accuracy is not clinical medication-safety accuracy.",
+        "Process RSS excludes the separately running Lemonade model server.",
+        "AMD/CPU-only/cloud comparisons require separate measured runs; no target is inferred from a label.",
+        "No power estimate is fabricated when meter data is absent."
+      ]
+    },
+    "final_smoke": {
+      "final_runtime": "3.14.7",
+      "review_without_model": "passed",
+      "medication_dose_comparisons": 5,
+      "native_research_snapshot_field": true,
+      "dual_report_handoff": "passed",
+      "catalog_duplicate_licences_merged": "passed",
+      "static_and_pdf_HEAD": "passed"
+    },
+    "browser_ui_specification": "original patient loaded; actual AutoGen tool trace; official catalog candidates; paired pharmacist/patient drafts; pending/handoff; screenshot captured; no live clinical approval fabricated",
+    "ui_clean_start": {
+      "date": "2026-10-25",
+      "toolbar_removed": true,
+      "sample_entry_removed": true,
+      "empty_working_database": true,
+      "counts": {
+        "patients": 0,
+        "active_patient": 0,
+        "pending_patient": 0
+      },
+      "browser": "Verified empty patient panel, no toolbar, input enabled and send disabled until input.",
+      "backup_location": "runtime/backups/",
+      "no_startup_seeding": true
+    },
+    "minimal_interface": {
+      "date": "2026-10-25",
+      "removed": [
+        "header model name and general source-info entry",
+        "composer source/pending hint",
+        "welcome eyebrow and title",
+        "start-input button"
+      ],
+      "retained": [
+        "patient input and lookup",
+        "source citations within assessment",
+        "pharmacist review and delivery gates"
+      ],
+      "browser_console_errors": 0,
+      "browser_verified": true,
+      "prebuilt_patients": false
+    },
+    "blue_theme": {
+      "date": "2026-10-25",
+      "theme": "logo-inspired blue",
+      "primary": "#2577aa",
+      "logo_blue": "#5ca4d9",
+      "logo_teal": "#5bb2aa",
+      "panels": "pale blue / white",
+      "verified": "Browser rendering and empty patient state",
+      "scope": "CSS palette only; clinical workflow and records unchanged"
+    },
+    "white_record_surfaces": {
+      "date": "2026-10-25",
+      "header_background": "white",
+      "patient_record_background": "white",
+      "empty_record_icon": "removed",
+      "waiting_patient_label": "removed",
+      "empty_record_text": "explicit line breaks",
+      "browser_verified": true
+    },
+    "sentence_layout": {
+      "date": "2026-10-25",
+      "heading": "no forced mid-sentence break",
+      "intro": "break between sentences only",
+      "empty_record_hint": "complete sentence per line when space permits",
+      "browser_verified": true
+    },
+    "original_28_source_audit": {
+      "checked_on": "2026-10-25",
+      "requested_capability": "還原原版全部 28 項藥事檢核",
+      "status": "awaiting_original_materials",
+      "complete_restoration": false,
+      "repos": [
+        {
+          "name": "moda-agent",
+          "url": "https://github.com/adi-gov-tw/moda-agent",
+          "head": "463818a0f85010e435eecc879bb570b3c001dc26",
+          "shallow": false,
+          "commits_checked": 2,
+          "history": [
+            {
+              "commit": "463818a0f85010e435eecc879bb570b3c001dc26",
+              "file_count": 121,
+              "required_modules_found": []
+            },
+            {
+              "commit": "62406a68da247d7ef176df0e6c4ee48efacf3929",
+              "file_count": 9,
+              "required_modules_found": []
+            }
+          ],
+          "required_modules_found": []
+        },
+        {
+          "name": "moda-agent-frontend",
+          "url": "https://github.com/adi-gov-tw/moda-agent-frontend",
+          "head": "cc4bd25c9d51741033dbc70e42d898448d94ae64",
+          "shallow": false,
+          "commits_checked": 2,
+          "history": [
+            {
+              "commit": "cc4bd25c9d51741033dbc70e42d898448d94ae64",
+              "file_count": 83,
+              "required_modules_found": []
+            },
+            {
+              "commit": "d232c11e3c53f427fb89c4a1a6a12faf097b7abd",
+              "file_count": 9,
+              "required_modules_found": []
+            }
+          ],
+          "required_modules_found": []
+        },
+        {
+          "name": "moda-agent-api-relay",
+          "url": "https://github.com/adi-gov-tw/moda-agent-api-relay",
+          "head": "df13aa32ec845fdfe86bfa9234e88a5d9e30ed3a",
+          "shallow": false,
+          "commits_checked": 3,
+          "history": [
+            {
+              "commit": "df13aa32ec845fdfe86bfa9234e88a5d9e30ed3a",
+              "file_count": 54,
+              "required_modules_found": []
+            },
+            {
+              "commit": "a6d5c99bef538d0588b6e1b66835a517904dc6b8",
+              "file_count": 55,
+              "required_modules_found": []
+            },
+            {
+              "commit": "c6a2cd1379b742d6523a7d220ce491c4eaad2aa2",
+              "file_count": 9,
+              "required_modules_found": []
+            }
+          ],
+          "required_modules_found": []
+        }
+      ],
+      "missing_runtime_modules": [
+        "utils/prompts.py",
+        "utils/llm_client.py"
+      ],
+      "original_check_definitions": null,
+      "no_medical_checklist_invented": true,
+      "runtime_changed": false,
+      "needed_materials": [
+        "原作者完整 utils 資料夾，尤其 prompts.py 與 llm_client.py",
+        "原版 28 項分析的逐項名稱、判定準則、輸出格式及測試案例"
+      ],
+      "official_entry": "https://github.com/adi-gov-tw/moda-agent/blob/463818a0f85010e435eecc879bb570b3c001dc26/pharmacist_main.py",
+      "official_backend_refs": {
+        "branches": 1,
+        "tags": 0,
+        "releases": 0,
+        "forks": 0,
+        "commits?path=utils/prompts.py": 0,
+        "commits?path=utils/llm_client.py": 0
+      },
+      "metadata_sha256": "850ebd5a94cdda22c7878f6c798fc7bab10c3a75c7e452785fe427fa16f54687"
+    },
+    "pair-integration-validation": {
+      "all_passed": true,
+      "checks": [
+        "research_path_never_upgraded_to_clinical_interaction",
+        "actual_MedHop_pair_paths_raw_sources_and_original_directions",
+        "research_findings_require_pharmacist_resolution",
+        "original_PDF_warning_preserved_despite_missing_research_mapping",
+        "third_product_drug_list_does_not_create_DDI",
+        "unmapped_names_never_guessed",
+        "label_specific_no_effect_is_not_global_safe",
+        "explicit_research_identifiers_without_invented_doses",
+        "patient_identifier_not_medication",
+        "integrated_report_preserved_with_sources",
+        "identity_mapping_version_invalidates_old_report",
+        "no_unapproved_delivery"
+      ],
+      "actual_research_pair": {
+        "entities": [
+          "DB00203",
+          "DB00820"
+        ],
+        "paths": 2,
+        "clinical_status": "insufficient"
+      },
+      "live_patient_records_created": 0
+    },
+    "pair-api-validation": {
+      "all_passed": true,
+      "research_pair": [
+        "DB00203",
+        "DB00820"
+      ],
+      "actual_supported_paths": 2,
+      "research_not_clinical_DDI": true,
+      "original_label_warning_preserved": true,
+      "mapping_unknown_or_protein_rejected": true,
+      "mapping_source_required": true,
+      "mapping_change_invalidates_old_review": true,
+      "unapproved_delivery_blocked": true,
+      "live_patient_count": 0,
+      "isolation": "work/pair-api-runtime-v2 at 127.0.0.1:8503"
+    },
+    "pair-agent-validation": {
+      "all_passed": true,
+      "agent_status": "completed",
+      "tools": [
+        "consult_pharmacy_agent",
+        "read_patient_medications",
+        "retrieve_medhop_mechanisms",
+        "retrieve_pharmacy_evidence"
+      ],
+      "native_graph_status": "completed",
+      "native_graph_scope": "進階 GraphRAG 僅針對第一組有逐邊支持原文的配對；其他配對保留完整結構化檢索結果。",
+      "per_pair_research_status": "mechanism_candidate",
+      "clinical_status": "insufficient",
+      "source_count": 3,
+      "review": "SY1Ip5U2Tm7kqRrX_Z2gQ4Ot",
+      "live_patient_records_created": 0
+    },
+    "pair_browser_validation": {
+      "same_pair_card": true,
+      "original_source_text_opened": true,
+      "research_direction_and_caveat_visible": true,
+      "test_database_isolated": true,
+      "production_patients": 0,
+      "latest_api_restarted": true
+    },
+    "patient_profile": {
+      "all_passed": true,
+      "checks": [
+        "auto_id_name_lookup_no_duplicate_no_history_as_medication",
+        "demographic_change_invalidates_old_review_and_clears_old_weeks",
+        "profile_range_validation_no_assumed_pregnancy",
+        "chat_demographics_persist_and_do_not_create_medications",
+        "new_patient_defaults_unknown_and_zero_age_preserved"
+      ],
+      "isolated_runtime": true,
+      "clinical_decisions_automated": false,
+      "browser_new_record_and_pregnancy_verified": true,
+      "production_patient_count": 0,
+      "empty_form_opened": true,
+      "interface_status": "superseded: basic-data form removed; chat-only input"
+    },
+    "chat_input": {
+      "all_passed": true,
+      "exact_user_sentence": true,
+      "system_generated_id": true,
+      "age_sex_history_preserved": true,
+      "three_medications_exact_doses_shared_frequency": true,
+      "existing_name_no_duplicate": true,
+      "natural_pregnancy_lactation_update": true,
+      "stale_review_blocked": true,
+      "live_patients_created": 0,
+      "browser_form_removed": true,
+      "browser_console_errors": 0,
+      "production_patients": 0
+    },
+    "blue_medhop_workspace": {
+      "all_passed": true,
+      "checks": [
+        "test_sentence_removed_from_placeholder",
+        "original_snapshot_fields_restored",
+        "segmented_dose_originals_and_explicit_missing_contraindications",
+        "unconfirmed_candidates_never_treated_as_patient_product",
+        "male_report_has_no_pregnancy_lactation_prompt",
+        "actual_confirmed_change_requires_acknowledgment",
+        "unknown_stop_rolls_back",
+        "confirmed_change_preserves_stopped_and_new_prescriptions",
+        "old_report_and_repeat_change_blocked",
+        "reported_tablet_count_not_invented_as_frequency_or_strength",
+        "female_pregnancy_context_retained",
+        "new_private_name_id_is_consistent_with_stored_input"
+      ],
+      "isolated_database": true,
+      "production_test_patients_created": 0,
+      "clinical_probabilities_invented": false,
+      "substitute_doses_invented": false,
+      "data_policy": "Same original TFDA ZIP snapshot; restored omitted fields; no clinical rules or scores fabricated.",
+      "browser_male_fields_hidden": true,
+      "browser_segmented_source_verified": true,
+      "browser_generic_placeholder": true
+    },
+    "workspace_browser": {
+      "agent_status": "completed",
+      "actual_tools": [
+        "consult_pharmacy_agent",
+        "read_patient_medications",
+        "retrieve_pharmacy_evidence",
+        "retrieve_medhop_mechanisms"
+      ],
+      "research_worker_status": "completed",
+      "supported_paths": 2,
+      "browser_source_opened": true,
+      "probabilities_displayed": false,
+      "test_database": "isolated"
+    },
+    "name_display_startup": {
+      "all_passed": true,
+      "full_names_in_patient_panel_choices_and_create_response": true,
+      "names_still_encrypted_at_rest": true,
+      "new_page_clears_active_case": true,
+      "medication_only_after_reload_does_not_update_previous_patient": true,
+      "existing_records_remain_searchable": true,
+      "same_mask_different_real_names_stay_separate": true,
+      "system_name": "藥你安心：藥事安全Agent",
+      "isolated_test_only": true,
+      "production_patient_count": 0,
+      "browser_empty_state_verified": true,
+      "browser_system_name_verified": true,
+      "browser_console_errors": 0
+    },
+    "clean_start_test_archive": {
+      "archived_test_record": "P-87424588",
+      "recoverable_database_and_key": true,
+      "remaining_patients": 0,
+      "policy": "Only the verified test case was removed from the working database; backup retained locally, excluded from ZIP."
+    },
+    "medication_reader": {
+      "all_passed": true,
+      "labels": "藥物說明",
+      "medication_order": [
+        "Clopidogrel",
+        "Aspirin",
+        "Atorvastatin"
+      ],
+      "next_button_selected": "Aspirin",
+      "candidate_panels_default_open": 0,
+      "original_text_panels_default_open": 0,
+      "step_row_width_measured_px": 676,
+      "short_step_title_width_measured_px": 84,
+      "step_layout": "horizontal content outside the absolutely positioned marker",
+      "browser_console_errors": 0,
+      "isolated_test_database": true,
+      "production_records_created_by_test": 0
+    },
+    "population": {
+      "all_passed": true,
+      "checks": [
+        "exact_short_message_triggers_immediate_alert_without_brand_or_request",
+        "one_medication_no_dose_still_checked",
+        "original_label_quote_and_page_attached",
+        "single_medication_report_finishes_without_model_wait",
+        "pregnancy_contraindication_in_report_and_handoff",
+        "unapproved_delivery_blocked",
+        "condition_change_rechecks_and_invalidates_old_report",
+        "unknown_pregnancy_not_asserted_as_pregnant",
+        "unindexed_drug_not_assumed_safe_or_contraindicated",
+        "later_pregnancy_input_rechecks_existing_single_medication"
+      ],
+      "live_patients_created": 0,
+      "source_indexed_rules": 1,
+      "coverage": "Only indexed original-label rules; does not establish universal pregnancy medication safety.",
+      "browser_immediate_red_alert": true,
+      "browser_exact_short_input": true,
+      "browser_console_errors": 0,
+      "actual_pdf_quote_visible": true,
+      "source_rule_scope": "One original-label Glibenclamide pregnancy contraindication rule; not a complete population contraindication database."
+    },
+    "medication_merge": {
+      "all_passed": true,
+      "checks": [
+        "missing_frequency_then_known_frequency_merges_into_original_id",
+        "repeated_messages_do_not_add_active_duplicates",
+        "one_source_and_one_pregnancy_alert",
+        "original_entries_retained_as_merged_history",
+        "old_medication_detail_resolves_to_current_record",
+        "merged_single_drug_does_not_invoke_pair_agent",
+        "missing_dose_supplemented_without_duplicate",
+        "conflicting_explicit_doses_not_silently_overwritten",
+        "conflicting_regimens_still_have_one_population_warning",
+        "change_invalidates_old_report",
+        "legacy_sparse_duplicates_can_be_repaired_without_deletion"
+      ],
+      "isolation": "temporary database",
+      "live_records_created": 0
+    },
+    "merge_scroll_browser": {
+      "repeated_input_active_medications": 1,
+      "frequency": "一天一次",
+      "latest_assessment_alert_cards": 1,
+      "collapsed_scroll_top_px": 262.5,
+      "expanded_client_height_px": 448,
+      "expanded_scroll_height_px": 1466,
+      "expanded_scroll_top_px": 1017.5,
+      "footer_visible": true,
+      "test_database_isolated": true,
+      "cache_busted_assets": true,
+      "initialization_after_all_scripts": true
+    },
+    "source_view": {
+      "browser_verified": true,
+      "quote_shown_first": true,
+      "original_pdf_link_prominent": true,
+      "uncorrected_ocr_default_collapsed": true,
+      "original_ocr_unchanged": true
+    },
+    "compound-interaction-validation": {
+      "all_passed": true,
+      "date": "2026-10-25",
+      "checks": [
+        "single_compound_and_original_frequency",
+        "immediate_low_glucose_and_pregnancy_alerts",
+        "model_independent_original_label_report",
+        "source_page_and_pdf_hash",
+        "repeat_input_merges",
+        "standalone_ingredients_not_assumed_equivalent",
+        "legacy_split_repair_preserves_history",
+        "unapproved_delivery_blocked"
+      ],
+      "scope": "One original-product-label interaction rule; not universal DDI coverage."
+    },
+    "ingredient-lookup-validation": {
+      "all_passed": true,
+      "date": "2026-10-27",
+      "checks": [
+        "brand_only_English_and_Chinese",
+        "original_TFDA_ingredient_values_and_license",
+        "ambiguous_candidates_not_flattened",
+        "unknown_product_no_generated_ingredients",
+        "compound_not_split_into_prescriptions",
+        "dose_not_inferred_from_product_strength",
+        "name_only_retains_existing_source_DDI_warning",
+        "chat_input_regression"
+      ],
+      "live_patients_created": 0
+    },
+    "dose-attribute-validation": {
+      "all_passed": true,
+      "date": "2026-10-27",
+      "checks": [
+        "exact_user_sentence_single_drug",
+        "comma_separated_dose_and_frequency_associated",
+        "Chinese_dose_units_preserved",
+        "multiple_drug_regimens_not_combined",
+        "attribute_names_not_drug_names",
+        "medication_detail_preserves_recorded_values",
+        "traceable_legacy_attribute_repair_preserves_history",
+        "chat_and_compound_regressions"
+      ],
+      "live_patients_created": 0
+    },
+    "pharmacy-rag-validation": {
+      "all_passed": true,
+      "checks": [
+        "real_BM25_original_chunks_and_offsets",
+        "verbatim_quote_page_traceability",
+        "medication_details_use_RAG",
+        "review_retrieval_context_and_existing_label_warning",
+        "model_not_run_honestly_reported",
+        "pharmacist_report_lists_RAG_sources",
+        "unknown_drug_no_borrowed_sources",
+        "empty_retrieval_does_not_scan_full_corpus",
+        "unapproved_delivery_blocked"
+      ],
+      "live_patients_created": 0
+    },
+    "record-layout-validation": {
+      "all_passed": true,
+      "date": "2026-10-27",
+      "checks": [
+        "history_two_separate_list_items",
+        "medication_input_order_preserved",
+        "dose_and_frequency_columns_align_despite_long_ingredients",
+        "ingredients_full_width_next_row",
+        "catalog_original_JSON_compared_for_three_products",
+        "source_null_vs_reference_only_vs_exact_label_not_matched",
+        "exact_license_original_PDF_links",
+        "ingredient_and_RAG_regressions"
+      ],
+      "live_patients_created": 0
+    },
+    "catalog-source-audit": {
+      "source_file": "work/government/tfda-unrevoked-37.zip!37_5.json",
+      "snapshot_file": "data/government/tfda-products.json",
+      "snapshot_rows": 24839,
+      "classification_nonempty_rows": 0,
+      "products": [
+        {
+          "license": "衛署藥製字第052301號",
+          "raw_classification": null,
+          "raw_dosage": "詳如仿單。",
+          "matches_snapshot": true
+        },
+        {
+          "license": "衛署藥製字第052530號",
+          "raw_classification": null,
+          "raw_dosage": "詳如仿單",
+          "matches_snapshot": true
+        },
+        {
+          "license": "衛署藥製字第055272號",
+          "raw_classification": null,
+          "raw_dosage": "詳如仿單",
+          "matches_snapshot": true
+        }
+      ],
+      "all_passed": true
+    },
+    "simple-followup-validation": {
+      "all_passed": true,
+      "date": "2026-10-28",
+      "checks": [
+        "one_optional_followup_section",
+        "no_visible_form_fields_by_default",
+        "reports_loaded_only_when_opened",
+        "patient_guide_plain_text_preview",
+        "two_editors_collapsed",
+        "technical_PENDING_ids_removed_from_readable_pharmacist_copy",
+        "delivery_requirements_only_visible_when_requested",
+        "no_automatic_approval_or_prescription_changes",
+        "acceptance_gate_regression_passed"
+      ],
+      "live_patients_created": 0,
+      "validation_environment": "isolated runtime on port 8511"
+    },
+    "overall-review-coverage-validation": {
+      "all_passed": true,
+      "date": "2026-10-28",
+      "checks": [
+        "overall_resolution_single_textarea",
+        "read_only_original_reason_scope_preserved",
+        "scope_mismatch_and_short_note_rejected",
+        "pending_contact_stale_version_and_unapproved_delivery_still_blocked",
+        "no_automatic_per_item_resolution",
+        "coverage_API_658_keys_589_DRUG_nodes",
+        "Lamotrigine_and_Carbamazepine_unmapped_Phentoyin_present",
+        "four_example_paths_have_original_support",
+        "UI_fields_and_coverage_dialog_verified"
+      ],
+      "live_patients_created": 0
+    }
+  },
+  "prior_integration_checks": {
+    "original_pdf_sha256_match": 100,
+    "medhop_parquet_byte_match": 5,
+    "javascript_syntax": "passed",
+    "python_syntax": "passed",
+    "medhop_DB00887_NKCC": {
+      "sources": 8,
+      "supported_paths": 1
+    },
+    "unknown_entity": "no_evidence",
+    "pharmacy_pdf_citations": "passed",
+    "original_examples": 12,
+    "record_roundtrip": "passed",
+    "analysis_note_idempotency": "passed",
+    "session_job_isolation": "passed",
+    "cancellation": "passed",
+    "local_model_response": "completed with source tags; citation ID parser checked against actual response",
+    "citation_uniprot_regression": "P55011 is not a citation; [M1] is a citation",
+    "browser_ui": "example load, explicit record save, reload persistence, dual-corpus retrieval, source expansion, confirmed analysis save",
+    "pdf_http_head": 200,
+    "workflow_default": "pharmacist workflow",
+    "workflow_auto_lookup_create": "passed in unit tests and browser",
+    "workflow_existing_patient_lookup": "passed in API and browser; no duplicate patient",
+    "workflow_incremental_medication_input": "6 medications, 15 pairs in browser",
+    "workflow_identity_disambiguation": "passed",
+    "workflow_allergy_alternative_exclusion": "passed",
+    "workflow_QID_is_not_ID": "passed across all original examples",
+    "workflow_source_backed_positive_warning": "passed using actual repository PDF quotation",
+    "workflow_third_product_list_guard": "passed using actual repository PDF",
+    "workflow_model_candidate_check": "completed against original repository example",
+    "workflow_stale_disposition_block": "passed",
+    "workflow_disposition_and_review_storage": "passed"
+  },
+  "limits": [
+    "AMD hardware identity, CPU/GPU/NPU routing and utilization were not verified.",
+    "Docker/Ubuntu22 image build and runtime were not verified because Docker daemon is unavailable.",
+    "Original moda-agent missing utils replaced by disclosed compatibility prompts and tools; no claim of original 28 checks.",
+    "GraphRAG worker runs isolated Python 3.11; API and AutoGen run Python 3.14.7.",
+    "Clinical accuracy, power, LLM end-to-end >=30 runs and CPU-only/cloud comparison pending.",
+    "Automated privacy filtering is not complete free-text deidentification or an authentication system."
+  ],
+  "patient_selection_retrieval": {
+    "passed": true,
+    "selection_reuses_saved_result": true,
+    "patient_results_isolated": true,
+    "stale_results_labelled": true,
+    "first_review_fallback": true,
+    "browser_verified_patients": [
+      "P-F3387C50",
+      "P-2229A9F6"
+    ],
+    "production_data_modified": false
+  },
+  "pde5_warning": {
+    "passed": true,
+    "immediate_warning": true,
+    "completed_review": true,
+    "saved_patient_selection": true,
+    "negative_controls": [
+      "single drug",
+      "stopped drug",
+      "unrelated pair"
+    ],
+    "source": "https://labeling.pfizer.com/showlabeling.aspx?id=652",
+    "section": "5.7",
+    "verified_on": "2026-10-28",
+    "production_data_modified": false
+  }
+}

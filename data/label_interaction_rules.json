@@ -1,0 +1,15 @@
+{
+  "rules": [
+    {
+      "file": "A0049191G0.pdf",
+      "page": 4,
+      "quote": "Sulfonylurea類⼝服糖尿病⽤藥\nGliclazine、Glibenclamide等 [請\n參考8.1.12]\n增強前述藥物降⾎糖效果，有時\n會出現低⾎糖症狀。",
+      "product_anchor": "BAKTAR",
+      "components": [
+        "Sulfamethoxazole",
+        "Trimethoprim"
+      ],
+      "pdf_sha256": "6562d8c9729b24ae4d6c5564fa31032875e3c62a95939b4a783e58eeb62e4f8c"
+    }
+  ]
+}

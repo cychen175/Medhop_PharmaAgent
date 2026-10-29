@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-25",
+  "header_background": "white",
+  "patient_record_background": "white",
+  "empty_record_icon": "removed",
+  "waiting_patient_label": "removed",
+  "empty_record_text": "explicit line breaks",
+  "browser_verified": true
+}

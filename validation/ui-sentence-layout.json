@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-25",
+  "heading": "no forced mid-sentence break",
+  "intro": "break between sentences only",
+  "empty_record_hint": "complete sentence per line when space permits",
+  "browser_verified": true
+}

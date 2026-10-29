@@ -1,0 +1,14 @@
+{
+  "agent_status": "completed",
+  "actual_tools": [
+    "consult_pharmacy_agent",
+    "read_patient_medications",
+    "retrieve_pharmacy_evidence",
+    "retrieve_medhop_mechanisms"
+  ],
+  "research_worker_status": "completed",
+  "supported_paths": 2,
+  "browser_source_opened": true,
+  "probabilities_displayed": false,
+  "test_database": "isolated"
+}

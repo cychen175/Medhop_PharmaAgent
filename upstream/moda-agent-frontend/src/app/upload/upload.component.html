@@ -1,0 +1,67 @@
+<div class="upload-container">
+  <div class="drop-zone"
+       [class.drag-over]="dragOver"
+       (drop)="onDrop($event)"
+       (dragover)="onDragOver($event)"
+       (dragleave)="onDragLeave($event)">
+
+    <input type="file"
+           id="fileInput"
+           multiple
+           accept=".pdf,application/pdf"
+           (change)="onFileChange($event)"
+           style="display: none">
+
+    <div class="upload-prompt">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+
+      <p class="title">拖曳PDF檔案到這裡上傳</p>
+      <p class="subtitle">或</p>
+
+      <button type="button" class="choose-btn" (click)="openFileInput()">選擇檔案</button>
+    </div>
+  </div>
+
+  <!-- 檔案列表 -->
+  <div class="file-list" *ngIf="files.length > 0">
+    <h5 style="text-align: center; font-weight: bold;">上傳清單</h5>
+    <hr>
+    <div class="file-item" *ngFor="let item of files; let i = index; trackBy: trackByFile">
+      <div class="file-info">
+        <span class="file-name">{{ item.file.name }}</span>
+        <span class="file-size">{{ (item.file.size / 1024 / 1024).toFixed(2) }} MB</span>
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill"
+               [style.width.%]="item.progress"
+               [class.success]="item.status === 'success'"
+               [class.error]="item.status === 'error'">
+          </div>
+        </div>
+        <span class="progress-text">{{ item.progress }}%</span>
+      </div>
+
+      <div class="status">
+        <span [class]="'status-' + item.status">
+          <ng-container [ngSwitch]="item.status">
+            <span *ngSwitchCase="'waiting'">等待上傳</span>
+            <span *ngSwitchCase="'uploading'">上傳中...</span>
+            <span *ngSwitchCase="'success'">完成</span>
+            <span *ngSwitchCase="'error'">失敗：{{ item.message }}</span>
+          </ng-container>
+        </span>
+        <button class="remove-btn" (click)="removeFile(i)" title="移除">×</button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="clear-finished" (click)="clearFinished()" [disabled]="!hasFinishedFiles">清除已完成清單</button>
+    </div>
+  </div>
+</div>

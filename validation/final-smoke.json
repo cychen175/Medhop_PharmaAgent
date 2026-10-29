@@ -1,0 +1,9 @@
+{
+  "final_runtime": "3.14.7",
+  "review_without_model": "passed",
+  "medication_dose_comparisons": 5,
+  "native_research_snapshot_field": true,
+  "dual_report_handoff": "passed",
+  "catalog_duplicate_licences_merged": "passed",
+  "static_and_pdf_HEAD": "passed"
+}

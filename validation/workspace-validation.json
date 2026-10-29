@@ -1,0 +1,21 @@
+{
+  "all_passed": true,
+  "checks": [
+    "test_sentence_removed_from_placeholder",
+    "original_snapshot_fields_restored",
+    "segmented_dose_originals_and_explicit_missing_contraindications",
+    "unconfirmed_candidates_never_treated_as_patient_product",
+    "male_report_has_no_pregnancy_lactation_prompt",
+    "actual_confirmed_change_requires_acknowledgment",
+    "unknown_stop_rolls_back",
+    "confirmed_change_preserves_stopped_and_new_prescriptions",
+    "old_report_and_repeat_change_blocked",
+    "reported_tablet_count_not_invented_as_frequency_or_strength",
+    "female_pregnancy_context_retained",
+    "new_private_name_id_is_consistent_with_stored_input"
+  ],
+  "isolated_database": true,
+  "production_test_patients_created": 0,
+  "clinical_probabilities_invented": false,
+  "substitute_doses_invented": false
+}

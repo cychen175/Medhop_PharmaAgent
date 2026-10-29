@@ -1,0 +1,219 @@
+{
+  "status": "completed",
+  "kind": "research_only",
+  "engine": "original MedHop GraphRAG local search",
+  "answer": "DB00887 is a specific blocker of the Na⁺-K⁺-2Cl⁻ cotransporter NKCC. It inhibits NKCC function by blocking chloride (Cl⁻) transport across epithelial cells, thereby reducing basolateral Cl⁻ uptake. This inhibition is functionally demonstrated by a 40% reduction in forskolin-activated I(SC) in cultured monolayers, indicating that NKCC mediates partial Cl⁻ uptake. The mechanism involves direct interference with NKCC activity, as confirmed by electrophysiological studies showing decreased transepithelial conductance and Cl⁻ secretion. [Data: Relationships (4938)]",
+  "sources": [
+    {
+      "kind": "Relationships",
+      "id": "4938",
+      "title": "DB00887 → NKCC",
+      "text": "DB00887 inhibits NKCC function"
+    },
+    {
+      "kind": "Sources",
+      "id": "910",
+      "title": "doc_0816.txt",
+      "text": "P13569 mediated chloride secretion in the avian renal proximal tubule . In primary cell cultures of the avian ( Gallus gallus ) renal proximal tubule parathyroid hormone and DB02527 activation generate a Cl(-)-dependent short circuit current ( I(SC) ) response , consistent with net transepithelial Cl(-) secretion . In this study we investigated the expression and physiological function of the Na-K-2Cl ( NKCC ) transporter and P13569 chloride channel , both associated with Cl(-) secretion in a variety of tissues , in these proximal tubule cells . Using both RT-PCR and immunoblotting approaches , we showed that NKCC and P13569 are expressed , both in proximal tubule primary cultures and in a proximal tubule fraction of non-cultured ( native tissue ) fragments . We also used electrophysiological methods to assess the functional contribution of NKCC and P13569 to forskolin-activated I(SC) responses in filter grown cultured monolayers . DB00887 ( 10 μM ) , a specific blocker of NKCC , inhibited forskolin activated I(SC) by about 40 % , suggesting that basolateral uptake of Cl(-) is partially mediated by NKCC transport . In monolayers permeabilized on the basolateral side with nystatin , forskolin activated an apical Cl(-) conductance , manifested as bidirectional diffusion currents in the presence of oppositely directed Cl(-) gradients . Under these conditions the apical conductance appeared to show some bias towards apical-to-basolateral Cl(-) current . Two selective P13569 blockers , P13569 Inhibitor 172 and GlyH-101 ( both at 20 μM ) inhibited the forskolin activated diffusion currents by 38-68 % , with GlyH-101 having a greater effect . These data support the conclusion that avian renal proximal tubules utilize an apical P13569 Cl(-) channel to mediate DB02527 -activated Cl(-) secretion .\n"
+    },
+    {
+      "kind": "Relationships",
+      "id": "5046",
+      "title": "DB01645 → DB00887",
+      "text": "DB00887 inhibits DB01645 effect"
+    },
+    {
+      "kind": "Sources",
+      "id": "931",
+      "title": "doc_0831.txt",
+      "text": "DB01645 stimulates electrogenic Cl(-) secretion in mouse jejunum . We used the short-circuit current ( I(sc) ) technique to investigate the effects of the isoflavone genistein on the electrogenic Cl(-) secretion of the mouse jejunum . DB01645 stimulated a sustained increase in I(sc) that was dose dependent . DB00887 inhibited 76 +/- 5 % of the genistein-stimulated I(sc) consistent with activation of Cl(-) secretion . DB01645 failed to stimulate I(sc) following maximal activation of the DB02527 pathway by forskolin . In addition , forskolin had a reduced effect on I(sc) of the mouse jejunum in the presence of genistein . DB01016 , a blocker of P13569 , eliminated the genistein-stimulated increase of I(sc) and reduced the forskolin-activated I(sc) . Clotrimazole , a Ca(2+)-activated K(+) channel blocker , failed to reduce the genistein-stimulated I(sc) . Vanadate , a blocker of tyrosine-dependent phosphatases , reduced the genistein-activated I(sc) . Tyrphostin A23 , a tyrosine kinase inhibitor , reduced basal I(sc) , after which genistein failed to stimulate I(sc) . These data suggest that genistein activated a sustained Cl(-) secretory response of the mouse jejunum and that the effect of genistein was via a tyrosine-dependent phosphorylation pathway .\n"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4979",
+      "title": "DB00887 → MTX",
+      "text": "DB00887 inhibits MTX-stimulated Isc"
+    },
+    {
+      "kind": "Sources",
+      "id": "919",
+      "title": "doc_0822.txt",
+      "text": "Methoxsalen stimulates electrogenic Cl- secretion in the mouse jejunum . We used the short-circuit current ( I(sc) ) and patch-clamp techniques to investigate the effects of methoxsalen ( MTX ) on the electrogenic Cl- secretion of the mouse jejunum . MTX stimulated a sustained increase in Isc that was dose dependent . DB00887 inhibited MTX-stimulated Isc in a dose-dependent manner consistent with activation of Cl- secretion . MTX failed to stimulate I(sc) following maximal activation of the DB02527 pathway by forskolin , but did increase Isc after a submaximal dose of forskolin . DB01016 , a blocker of the cystic fibrosis transmembrane conductance regulator ( P13569 ) , reduced the MTX-stimulated increase of Isc by 59 +/- 6 % . The DB02527 -dependent K+ channel blocker 293B did not alter the MTX-activated I(sc) ; however , clotrimazole , an intermediate Ca2(+)-activated K+ channel ( IK(Ca) ) blocker , reduced the MTX-stimulated I(sc) . MTX did not alter Na(+)-glucose cotransport across the mouse jejunum . In cell-attached membrane patches , MTX increased the open probability of the basolateral IK(Ca) channel of isolated crypts . These data suggest that the P13569 and IK(Ca) channels participate in the MTX-activated , sustained Cl- secretory response of the mouse jejunum .\n"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4996",
+      "title": "DB00887 → NA_K_2CL_COTRANSPORTER",
+      "text": "DB00887 inhibits cotransporter"
+    },
+    {
+      "kind": "Sources",
+      "id": "922",
+      "title": "doc_0825.txt",
+      "text": "DB00887 blocks P13569 GCl in the native sweat duct . DB00887 is well known for its ability to inhibit the nonconductive Na+-K+-2Cl- cotransporter . We were surprised in preliminary studies to find that bumetanide in the contraluminal bath also inhibited NaCl absorption in the human sweat duct , which is apparently poor in cotransporter activity . Inhibition was accompanied by a marked decrease in the transepithelial electrical conductance . Because the cystic fibrosis transmembrane conductance regulator ( P13569 ) Cl- channel is richly expressed in the sweat duct , we asked whether bumetanide acts by blocking this anion channel . We found that bumetanide 1 ) significantly increased whole cell input impedance , 2 ) hyperpolarized transepithelial and basolateral membrane potentials , 3 ) depolarized apical membrane potential , 4 ) increased the ratio of apical-to-basolateral membrane resistance , and 5 ) decreased transepithelial Cl- conductance ( GCl ) . These results indicate that bumetanide inhibits P13569 GCl in both cell membranes of this epithelium . We excluded bumetanide interference with the protein kinase A phosphorylation activation process by \" irreversibly \" phosphorylating P13569 [ by using adenosine 5'-O-(3-thiotriphosphate) in the presence of a phosphatase inhibition cocktail ] before bumetanide application . We then activated P13569 GCl by adding 5 mM DB00171 . DB00887 in the cytoplasmic bath ( 10(-3) M ) inhibited approximately 71 % of this DB00171 -activated P13569 GCl , indicating possible direct inhibition of P13569 GCl . We conclude that bumetanide inhibits P13569 GCl in apical and basolateral membranes independent of phosphorylation . The results also suggest that > 10(-5) M bumetanide can not be used to specifically block the Na+-K+-2Cl- cotransporter .\n"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4969",
+      "title": "DB00887 → HT-29CL.19A",
+      "text": "DB00887 inhibits transepithelial response"
+    },
+    {
+      "kind": "Sources",
+      "id": "916",
+      "title": "doc_0820.txt",
+      "text": "Microelectrode measurements of the effects of basolateral adenosine in polarized human intestinal epithelial cells in culture . Activation of the basolateral receptor for adenosine in HT-29cl.19A cells , by 100 microM adenosine , increased the equivalent short-circuit current ( DeltaIsc= 24+/-2 microA/cm2 ) , depolarized the intracellular potential ( DeltaVa= 26+/-2 mV ) and decreased the fractional apical membrane resistance ( DeltafRa=-0.48 ) . The changes in all parameters reached their peak values simultaneously . This suggests that the primary action of the adenosine-activated pathway is on only one membrane . DB00887 inhibited the transepithelial response and repolarized the cell potential . After preincubation with 100 microM forskolin , application of 300 microM adenosine caused a significant further change in Va , Isc , the transepithelial potential ( Vt ) and fRa . Together with the results from ion-replacement studies , the observations indicate that adenosine activates channels other than the cystic fibrosis transmembrane conductance regulator ( P13569 ) . The rank order of potencies of adenosine and adenosine analogues implies that the receptor is of the A2 subtype . Preincubation with 4-bromophenacyl bromide ( 4-BPB ) inhibited the effect of an adenosine analogue by 50 % , indicating that activation of phospholipase A2 may be involved in the adenosine-induced response .\n"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4973",
+      "title": "DB00887 → P55011",
+      "text": "DB00887 blocks P55011 to prevent cell shrinkage"
+    },
+    {
+      "kind": "Sources",
+      "id": "917",
+      "title": "doc_0821.txt",
+      "text": "DB02527 inhibition of murine intestinal Na/H exchange requires P13569 -mediated cell shrinkage of villus epithelium . BACKGROUND AND AIMS : Unlike the intestine of normal subjects , small-intestinal epithelia of cystic fibrosis patients and cystic fibrosis transmembrane conductance regulator protein-null ( P13569 (-) ) mice do not respond to stimulation of intracellular cyclic adenosine monophosphate with inhibition of electroneutral NaCl absorption . Because P13569 -mediated anion secretion has been associated with changes in crypt cell volume , we hypothesized that P13569 -mediated cell volume reduction in villus epithelium is required for intracellular cyclic adenosine monophosphate inhibition of Na(+)/H(+) exchanger ( primarily P48764 ) activity in the proximal small intestine . METHODS : Transepithelial (22)Na flux across the jejuna of P13569 (+) , P13569 (-) , the basolateral membrane Na(+)/K(+)/2Cl(-) co-transporter protein P55011 (+) , and P55011 (-) mice were correlated with changes in epithelial cell volume of the midvillus region . RESULTS : Stimulation of intracellular cyclic adenosine monophosphate resulted in cessation of Na(+)/H(+) exchanger-mediated Na(+) absorption ( J(ms)(NHE) ) in P13569 (+) jejunum but had no effect on J(ms)(NHE) across P13569 (-) jejunum . Cell volume indices indicated an approximately 30 % volume reduction of villus epithelial cells in P13569 (+) jejunum but no changes in P13569 (-) epithelium after intracellular cyclic adenosine monophosphate stimulation . In contrast , cell shrinkage induced by hypertonic medium inhibited J(ms)(NHE) in both P13569 (+) and P13569 (-) mice . DB00887 treatment to inhibit Cl(-) secretion by blockade of the Na(+)/K(+)/2Cl(-) co-transporter , P55011 , of stimulated P13569 (+) jejunum prevented maximal volume reduction of vill"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4946",
+      "title": "DB00887 → NITROPRUSSIDE",
+      "text": "Potentiates vasorelaxant response"
+    },
+    {
+      "kind": "Sources",
+      "id": "912",
+      "title": "doc_0818.txt",
+      "text": "Role of chloride transport proteins in the vasorelaxant action of nitroprusside in isolated rat aorta . Chloride ions play a key role in smooth muscle contraction , but little is known concerning their role in smooth muscle relaxation . Here we investigated the effect of chloride transport inhibitors on the vasorelaxant responses to nitroprusside in isolated and endothelium-denuded rat aorta , precontracted with phenylephrine 1 muM . Incubation of aortic rings in NO(3)(-) media strongly potentiated the vasorelaxant responses to nitroprusside . DB00887 , DIDS ( 4,4'-diisothiocyanatostilbene-2,2'-disulfonic acid ) and acetazolamide strongly potentiated the vasorelaxant responses to nitroprusside ( by 70-100 % ) . EC(50) were 2.3+/-0.5 microM for bumetanide , 26+/-15 microM for DIDS and 510+/-118 microM for acetazolamide ( n=6 for condition ) . Niflumic acid , a selective inhibitor of ClCa ( calcium-activated chloride channels ) , potentiated nitroprusside relaxation to a similar extent as chloride transport inhibitors , in a non-additive manner . Zinc and nickel ions , both modestly potentiated nitroprusside vasorelaxation ( by 20-30 % ) . Cobaltum had negligible effect on nitroprusside vasorelaxation . P15085 ( p-chlorophenoxy-acetic acid ) , an inhibitor of volume-sensitive chloride channels ( ClC ) , slightly potentiated nitroprusside vasorelaxation ( by 15 % ) , and the cystic fibrosis transmembrane conductance regulator ( P13569 ) chloride channel inhibitors P13569 (inh)172 ( 5-[(4-Carboxyphenyl)methylene]-2-thioxo-3- [ (3-trifluoromethyl)phenyl-4-thiazolidinone"
+    },
+    {
+      "kind": "Relationships",
+      "id": "5024",
+      "title": "DB00887 → DCEBIO",
+      "text": "Blocks DCEBIO-stimulated Isc"
+    },
+    {
+      "kind": "Sources",
+      "id": "927",
+      "title": "doc_0829.txt",
+      "text": "DCEBIO stimulates Cl- secretion in the mouse jejunum . We investigated the effects of 5,6-dichloro-1-ethyl-1,3-dihydro-2H-benzimidazol-2-one(DCEBIO) on the Cl- secretory response of the mouse jejunum using the Ussing short-circuit current ( Isc ) technique . DCEBIO stimulated a concentration-dependent , sustained increase in Isc ( EC50 41 +/- 1 microM ) . Pretreating tissues with 0.25 microM forskolin reduced the concentration-dependent increase in Isc by DCEBIO and increased the EC50 ( 53 +/- 5 microM ) . DB00887 blocked ( 82 +/- 5 % ) the DCEBIO-stimulated Isc consistent with Cl- secretion . DCEBIO was a more potent stimulator of Cl- secretion than its parent molecule , 1-ethyl-2-benzimidazolinone . DB01016 or P16860 reduced the DCEBIO-stimulated Isc by > 80 % indicating the participation of P13569 in the DCEBIO-stimulated Isc response . Clotrimazole reduced DCEBIO-stimulated Isc by 67 +/- 15 % , suggesting the participation of the intermediate conductance Ca2+-activated K+ channel ( IKCa ) in the DCEBIO-activated Isc response . In the presence of maximum forskolin ( 10 microM ) , the DCEBIO response was reduced and biphasic , reaching a peak response of the change in Isc of 43 +/- 5 microA/cm2 and then falling to a steady-state response of 17 +/- 10 microA/cm2 compared with DCEBIO control tissues ( 61 +/- 6 microA/cm2 ) . The forskolin-stimulated Isc in the presence of DCEBIO was reduced compared with forskolin control tissues . Similar results were observed with DCEBIO and 8-BrcAMP where adenylate cyclase was bypassed . H89 , a PKA inhibitor , reduced the"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4998",
+      "title": "DB00887 → TRANSEPITHELIAL_CONDUCTANCE",
+      "text": "Inhibition reduces transepithelial conductance"
+    },
+    {
+      "kind": "Relationships",
+      "id": "4975",
+      "title": "DB00887 → P13569",
+      "text": "DB00887 interacts with P13569 by inhibiting its glutamate-cysteine ligase (GCL) activity. This inhibition suggests that DB00887 modulates the function of P13569, specifically impairing its role in glutathione synthesis. The interaction is consistent with DB00887 acting as a functional blocker of P13569, thereby reducing its enzymatic activity in the GCL pathway. This relationship indicates a regulatory or suppressive effect of DB00887 on P13569’s biological function. No contradictory information is present in the provided descriptions, and all data align to support a single mechanism: DB00887 inhibits P13569’s glutamate-cysteine ligase activity. This interaction highlights a potential regulatory pathway involving these two entities in cellular redox homeostasis."
+    },
+    {
+      "kind": "Sources",
+      "id": "918",
+      "title": "doc_0821.txt",
+      "text": "69 (+) and P13569 (-) mice . DB00887 treatment to inhibit Cl(-) secretion by blockade of the Na(+)/K(+)/2Cl(-) co-transporter , P55011 , of stimulated P13569 (+) jejunum prevented maximal volume reduction of villus epithelium and recovered approximately 40 % of J(ms)(NHE) . Likewise , J(ms)(NHE) and cell volume were unaffected by intracellular cyclic adenosine monophosphate stimulation in P55011 (-) jejuna . CONCLUSIONS : These findings show a previously unrecognized role of functional P13569 expressed in villus epithelium : regulation of P48764 -mediated Na(+) absorption by alteration of epithelial cell volume .\n"
+    },
+    {
+      "kind": "Entities",
+      "id": "3712",
+      "title": "DB00887",
+      "text": "DB00887 is a specific NKCC blocker that inhibits chloride transport by blocking Cl⁻ secretion in epithelial tissues. It acts as a chloride transport inhibitor, suppressing Cl⁻ secretion stimulated by various agents including DCEBIO, genistein, and MTX. DB00887 also inhibits GCl (glutamate chloride) secretion in sweat ducts and blocks transepithelial chloride responses. Its mechanism involves interference with P55011-mediated chloride transport pathways. This multifaceted inhibition of chloride secretion across epithelial membranes positions DB00887 as a potent modulator of epithelial ion transport, with significant implications in conditions involving dysregulated chloride balance."
+    },
+    {
+      "kind": "Entities",
+      "id": "3710",
+      "title": "NKCC",
+      "text": "Na-K-2Cl transporter for Cl(-) uptake"
+    },
+    {
+      "kind": "Entities",
+      "id": "2785",
+      "title": "P35611",
+      "text": "P35611 is a protein associated with hypertension risk. It has been linked to elevated blood pressure, suggesting a role in the physiological mechanisms underlying hypertension. This association indicates that P35611 may contribute to the development or progression of hypertension, potentially through modulation of vascular function or blood pressure regulation pathways. While the exact molecular mechanisms remain under investigation, the protein's connection to hypertension risk positions it as a potential biomarker or therapeutic target in cardiovascular disease. The evidence supports its involvement in hypertension-related pathophysiology, reinforcing its significance in the study of blood pressure regulation."
+    },
+    {
+      "kind": "Entities",
+      "id": "342",
+      "title": "DB06822",
+      "text": "Low molecular weight heparin>"
+    },
+    {
+      "kind": "Entities",
+      "id": "3884",
+      "title": "O75689",
+      "text": "Novel molecular target of Q15303"
+    },
+    {
+      "kind": "Entities",
+      "id": "3886",
+      "title": "P16949",
+      "text": "Novel molecular target of Q15303"
+    },
+    {
+      "kind": "Entities",
+      "id": "3887",
+      "title": "Q05195",
+      "text": "Novel molecular target of Q15303"
+    },
+    {
+      "kind": "Entities",
+      "id": "917",
+      "title": "P42898",
+      "text": "P42898 is an uncharacterized protein with potential involvement in cancer-related processes. It harbors specific amino acid variants, including Ala222Val and Glu429Ala, which may influence its structure, function, or interaction with other molecules. While its exact biological role remains undefined, the association with cancer-related pathways suggests a possible functional significance in disease mechanisms. The presence of these variants indicates that P42898 may be subject to genetic variation, potentially contributing to phenotypic diversity or disease susceptibility. Despite being uncharacterized, its link to cancer-related biology positions it as a protein of interest in oncological research. Further studies are needed to elucidate its molecular function, cellular localization, and regulatory mechanisms."
+    },
+    {
+      "kind": "Entities",
+      "id": "1306",
+      "title": "DB06779",
+      "text": "Low-molecular-weight heparin promoting angiogenesis"
+    },
+    {
+      "kind": "Sources",
+      "id": "509",
+      "title": "doc_0460.txt",
+      "text": "P11387 is a cofactor for c-Jun in the regulation of epidermal growth factor receptor expression and cancer cell proliferation . P11387 ( Topo I ) is a molecular target for the anticancer agent topotecan in the treatment of small cell lung cancer and ovarian carcinomas . However , the molecular mechanisms by which topotecan treatment inhibits cancer cell proliferation are unclear . We describe here the identification of Topo I as a novel endogenous interaction partner for transcription factor c-Jun . Reciprocal coimmunoprecipitation analysis showed that Topo I and c-Jun interact in transformed human cells in a manner that is dependent on JNK activity . c-Jun target gene epidermal growth factor receptor ( P00533 ) was identified as a novel gene whose expression was specifically inhibited by topotecan . Moreover , Topo I overexpression supported c-Jun-mediated reporter gene activation and both genetic and chemical inhibition of c-Jun converted cells resistant to topotecan-elicited P00533 downregulation . DB01030 -elicited suppression of proliferation was rescued by exogenously expressed P00533 . Furthermore , we demonstrate the cooperation of the JNK-c-Jun pathway , Topo I , and P00533 in the positive regulation of O75794 cell proliferation . Together , these results have identified transcriptional coactivator Topo I as a first endogenous cofactor for c-Jun in the regulation of cell proliferation . In addition , the results of the present study strongly suggest that inhibition of P00533 expression is a novel mechanism by which topotecan inhibits cell proliferation in cancer therapy .\n"
+    },
+    {
+      "kind": "Sources",
+      "id": "909",
+      "title": "doc_0815.txt",
+      "text": "Dopamine receptors and psychiatric drug treatment . The established antipsychotic drugs act mainly by antagonizing dopamine mediated synaptic transmission in the brain . Increase in the rate of production of dopamine metabolites as well as the firing rate of dopamine-containing neurons can be interpreted as compensatory responses to an interruption of synaptic transmission at dopamine nerve terminals . The demonstration of involvement of limbic and cortical mechanisms in the antipsychotic activity of neuroleptic drugs is far more difficult than the involvement of nigro-striatal and tubero-infundibular mechanisms in the neurological and neuroendocrine effects of these drugs . Application of radioreceptor techniques to dopamine research has supported the findings obtained by other neuropsychopharmacological research techniques , providing more direct evidence of dopamine receptor blockade by neuroleptic drugs . Further research is needed especially in studying the nature of the time-dependent adaptive changes at the receptor sites as well as the differences between the different dopamine projections and neural systems in the brain . The different subtypes of dopamine receptors in the brain , currently called D1 and D2 dopamine receptors , seem to be parallel , although in many respects independently-acting regulatory systems . P14416 -selective antagonists such as sulpiride seem to cause selective D2 receptor up-regulation . P01236 secretion seems to be regulated by D2 dopamine receptors . The exact physiological role of D1 dopamine receptors as well as the clinical consequences of selective D1 antagonism is not known . DB00391 and clozapine are examples of atypical neuroleptic compounds that have quite different profile of action , the former having strong and selective antidopaminergic action , the latter combining a number of non- dopaminergic mechanisms with rather slight effects on dopamine receptors. ( ABSTRACT TRUNCATED AT 250 WORDS )\n"
+    }
+  ],
+  "scope": {
+    "strategy": "hybrid_lexical_vector_graph_original_text",
+    "complete": false,
+    "scanned_entities": 4385,
+    "scanned_relationships": 6082,
+    "scanned_text_units": 1129,
+    "exact_matches": [
+      "DB00887",
+      "NKCC"
+    ],
+    "retrieval_anchors": [
+      "DB00887",
+      "NKCC",
+      "METHOTRAXATE",
+      "P35611",
+      "MOLARITY",
+      "DB06822",
+      "Q99102",
+      "O75689",
+      "P16949",
+      "Q05195",
+      "P42898",
+      "DB06779"
+    ],
+    "candidate_paths": 1,
+    "entity_mapping": "exact_and_lexical",
+    "admitted_relationships": 10,
+    "admitted_paths": 1,
+    "original_source_excerpts": 4,
+    "context_tokens": 2061
+  }
+}

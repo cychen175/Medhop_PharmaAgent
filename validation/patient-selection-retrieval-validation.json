@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "selection_reuses_saved_result": true,
+  "patient_results_isolated": true,
+  "stale_results_labelled": true,
+  "first_review_fallback": true,
+  "browser_verified_patients": [
+    "P-F3387C50",
+    "P-2229A9F6"
+  ],
+  "production_data_modified": false
+}

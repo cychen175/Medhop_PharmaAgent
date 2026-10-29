@@ -1,0 +1,98 @@
+[
+  {
+    "id": "doctor-original",
+    "name": "醫師測試範例",
+    "text": "患者資料\n姓名：周○○\n年齡：69歲\n科別：消化內科\n診斷：肝惡性腫瘤、肝硬化、慢性C型肝炎、尿路感染\n處方藥物\nAUGMENTIN TAB 1G：1錠，每12小時服用1次（Q12H）\nNAPROXEN (U-Ritis) 250MG：1錠，每日2次（BID）\nEXFORGE (AMLODIPIN + Valsartan)：1錠，每天早晨服用（QD AM）\nLORAZEPAM (Larpam) 2MG：1錠，每晚睡前服用（OHS）\n160mg Valsartan (Diovan)：1錠，每天早晨服用（QD AM）\nSILYMARIN 150MG：1顆，每日3次（TID）\nALINAMIN F：1錠，每日2次（BID）\nNATRILIX SR ：1錠，每天早晨服用（QD AM）",
+    "role": "doctor",
+    "source": "moda-agent/doc/醫師測試範例.txt",
+    "url": "https://github.com/adi-gov-tw/moda-agent/blob/463818a0f85010e435eecc879bb570b3c001dc26/doc/醫師測試範例.txt"
+  },
+  {
+    "id": "pharmacist-original",
+    "name": "藥師測試範例",
+    "text": "患者基本資料\n年齡：72歲\n性別：女性\n診斷：高血壓、心房顫動、糖尿病、慢性腎臟病第3期、骨質疏鬆症\n處方藥品清單：\n\nAmlodipine 5 mg：每天1次，每次1錠\nWarfarin 2.5 mg：每天1次，每次1錠\nMetformin 500 mg：每天2次，每次1錠\nFurosemide 40 mg：每天1次，每次1錠\nCalcium carbonate 500 mg：每天2次，每次1錠\n\n缺貨藥品清單：Warfarin、Metformin\n替代藥品清單：\n  Warfarin替代：Rivaroxaban 15 mg、Apixaban 5 mg\n  Metformin替代：Gliclazide 80 mg、Sitagliptin 100 mg",
+    "role": "pharmacist",
+    "source": "moda-agent/doc/藥師測試範例.txt",
+    "url": "https://github.com/adi-gov-tw/moda-agent/blob/463818a0f85010e435eecc879bb570b3c001dc26/doc/藥師測試範例.txt"
+  },
+  {
+    "id": "example-1",
+    "name": "兒童用藥案例",
+    "text": "基本資料\n\n患者：林○小，男，8歲，體重25kg\n診斷：支氣管炎、發燒\n過敏史：無\n處方：\n\nAspirin 325mg TID\nCodeine 30mg QID\nAmoxicillin 250mg TID",
+    "role": "doctor",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-2",
+    "name": "重複用藥案例",
+    "text": "基本資料\n\n患者：劉○珍，女，68歲\n診斷：高血壓、糖尿病、關節炎\n過敏史：無\n處方：\n\nLisinopril 10mg QD (心臟科)\nEnalapril 5mg BID (腎臟科)\nMetformin 500mg BID (內分泌科)\nMetformin SR 1000mg QD (家醫科)\nIbuprofen 400mg TID (骨科)\nDiclofenac gel (骨科)",
+    "role": "doctor",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-3",
+    "name": "懷孕婦女感冒",
+    "text": "基本資料\n\n患者：李○美，女，28歲，懷孕24週\n診斷：上呼吸道感染\n過敏史：無\n處方：\n\nIbuprofen 400mg TID\nCodeine 30mg QID\nDextromethorphan 15mg TID",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-4",
+    "name": "藥物交互作用案例",
+    "text": "基本資料\n\n患者：黃○雄，男，45歲\n診斷：高血壓、憂鬱症、胃食道逆流\n過敏史：無\n處方：\n\nAmlodipine 5mg QD\nSertraline 100mg QD\nOmeprazole 40mg QD\nWarfarin 5mg QD\nSt. John's Wort (自行服用)",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-5",
+    "name": "過敏與禁忌症案例",
+    "text": "基本資料\n\n患者：鄭○美，女，42歲\n診斷：高血壓、尿道感染、焦慮症\n過敏史：Penicillin (皮疹), Sulfa drugs (Stevens-Johnson syndrome)\n處方：\n\nAmoxicillin 500mg TID\nHydrochlorothiazide 25mg QD\nSulfamethoxazole/Trimethoprim 800/160mg BID\nAlprazolam 0.5mg TID",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-6",
+    "name": "抗凝血劑與抗生素交互作用",
+    "text": "基本資料\n\n患者：陳○文，男，62歲\n診斷：心房顫動、肺炎\n過敏史：無\n處方：\n\nWarfarin 5mg QD\nClarithromycin 500mg BID\nAzithromycin 500mg QD x 3天\nRifampin 600mg QD",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-7",
+    "name": "抗癲癇藥物與避孕藥交互作用",
+    "text": "基本資料\n\n患者：林○婷，女，25歲\n診斷：癲癇、避孕需求\n過敏史：無\n處方：\n\nCarbamazepine 200mg BID\nPhenytoin 100mg TID\n口服避孕藥 (Ethinyl estradiol/Levonorgestrel)\nLamotrigine 25mg BID",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-8",
+    "name": "抗憂鬱劑與多種藥物交互作用",
+    "text": "基本資料\n\n患者：張○明，男，48歲\n診斷：重度憂鬱症、高血壓、偏頭痛\n過敏史：無\n處方：\n\nFluoxetine 40mg QD\nTramadol 50mg QID PRN\nSumatriptan 50mg PRN\nPropranolol 40mg BID\n人參茶（患者自行服用）",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-9",
+    "name": "質子幫浦抑制劑與多重交互作用",
+    "text": "基本資料\n\n患者：李○華，女，65歲\n診斷：胃食道逆流、骨質疏鬆、心房顫動、C型肝炎\n過敏史：無\n處方：\n\nOmeprazole 40mg QD\nClopidogrel 75mg QD\nWarfarin 5mg QD\nKetoconazole 200mg BID\n鈣片 500mg TID",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  },
+  {
+    "id": "example-10",
+    "name": "抗生素與口服藥物交互作用",
+    "text": "基本資料\n\n患者：劉○美，女，35歲\n診斷：泌尿道感染、糖尿病、甲狀腺功能低下\n過敏史：無\n處方：\n\nCiprofloxacin 500mg BID\nMetformin 1000mg BID\nLevothyroxine 100mcg QD\nFerrous sulfate 325mg TID\n制酸劑 Aluminum hydroxide TID PRN",
+    "role": "pharmacist",
+    "source": "moda-agent-frontend/src/app/shared/input-example.ts",
+    "url": "https://github.com/adi-gov-tw/moda-agent-frontend/blob/cc4bd25c9d51741033dbc70e42d898448d94ae64/src/app/shared/input-example.ts"
+  }
+]

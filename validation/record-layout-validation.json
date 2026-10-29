@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "date": "2026-10-27",
+  "checks": [
+    "history_two_separate_list_items",
+    "medication_input_order_preserved",
+    "dose_and_frequency_columns_align_despite_long_ingredients",
+    "ingredients_full_width_next_row",
+    "catalog_original_JSON_compared_for_three_products",
+    "source_null_vs_reference_only_vs_exact_label_not_matched",
+    "exact_license_original_PDF_links",
+    "ingredient_and_RAG_regressions"
+  ],
+  "live_patients_created": 0
+}

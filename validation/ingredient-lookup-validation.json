@@ -1,0 +1,15 @@
+{
+  "all_passed": true,
+  "date": "2026-10-27",
+  "checks": [
+    "brand_only_English_and_Chinese",
+    "original_TFDA_ingredient_values_and_license",
+    "ambiguous_candidates_not_flattened",
+    "unknown_product_no_generated_ingredients",
+    "compound_not_split_into_prescriptions",
+    "dose_not_inferred_from_product_strength",
+    "name_only_retains_existing_source_DDI_warning",
+    "chat_input_regression"
+  ],
+  "live_patients_created": 0
+}

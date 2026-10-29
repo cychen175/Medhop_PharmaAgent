@@ -1,0 +1,36 @@
+-Goal-
+Extract a small biomedical knowledge graph from the text. Follow the exact format.
+
+-Rules-
+1. Select at most 8 important entities of these types: [{entity_types}]. Prefer IDs such as DB08918, P31645, P56817, genes, proteins, drugs, diseases and pathways.
+2. Entity description must be at most 12 words.
+3. Emit up to 12 explicit relationships. Every relationship source and target must exactly match an emitted entity name.
+4. Relationship description must be at most 12 words. Strength is an integer 1-10.
+5. Output records only. No XML tags, headings, explanations, markdown, or JSON.
+6. Separate records with ## and end with <|COMPLETE|>.
+
+Entity format:
+("entity"<|>NAME<|>TYPE<|>SHORT DESCRIPTION)
+
+Relationship format:
+("relationship"<|>SOURCE<|>TARGET<|>SHORT EVIDENCE<|>STRENGTH)
+
+-Example-
+Entity_types: DRUG,PROTEIN,DISEASE
+Text: DB08918 inhibits serotonin transporter P31645 and may treat depression.
+Output:
+("entity"<|>DB08918<|>DRUG<|>Antidepressant drug)
+##
+("entity"<|>P31645<|>PROTEIN<|>Serotonin transporter)
+##
+("entity"<|>DEPRESSION<|>DISEASE<|>Mood disorder)
+##
+("relationship"<|>DB08918<|>P31645<|>DB08918 inhibits P31645<|>10)
+##
+("relationship"<|>DB08918<|>DEPRESSION<|>DB08918 may treat depression<|>8)
+<|COMPLETE|>
+
+-Real Data-
+Entity_types: {entity_types}
+Text: {input_text}
+Output:

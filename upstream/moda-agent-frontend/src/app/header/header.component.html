@@ -1,0 +1,111 @@
+<nav class="navbar custom-navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center">
+      <button class="btn btn-sm btn-secondary me-3 btn-sidebarToggle" id="sidebarToggle" type="button" (click)="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+      </button>
+      <span class="navbar-brand-text" style="cursor: pointer;" (click)="refreshPage()">AI 醫護虛實共照 - AI 藥事 Agent</span>
+    </a>
+    <div class="menu-actions d-flex align-items-center">
+      <div class="dropdown header-dropdown" matTooltip="模型設置" matTooltipPosition="below">
+        <button
+          class="btn btn-circle me-3 dropdown-toggle"
+          type="button"
+          id="settingDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img class="language-menu" src="assets/images/icon-setup.svg" alt="setting">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="settingDropdown">
+          <li><a class="dropdown-item" style="cursor: pointer;padding: 10px 15px;" (click)="openChangeLlmModelModal()">切換模型</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer;padding: 10px 15px;" (click)="openRagSettingsModal()">RAG智慧搜尋設定</a></li>
+          <li><a class="dropdown-item" style="cursor: pointer;padding: 10px 15px;" (click)="openUploadPDFMModal()">上傳仿單PDF</a></li>
+        </ul>
+      </div>
+      <a *ngIf="!isNewChat" type="button" class="btn btn-add-user me-5" role="button" (click)="startNewChat()">
+        <i class="fa fa-plus me-2"></i> 新的
+      </a>
+    </div>
+  </div>
+</nav>
+
+<ng-template #changeLlmModelModal let-modal>
+  <div class="modal-header">
+    <div class="modal-title m-3 fw-bold text-decoration-none fs-4" id="staticBackdropLabel">切換 LLM模型</div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('cancel click')"></button>
+  </div>
+  <div class="modal-body align-items-center">
+    <div class="row mb-3 align-items-center">
+      <label for="account" class="col-4 form-label">模型 Model <span class="text-danger-">*</span></label>
+      <div class="col-8">
+        <input name="model" type="" class="form-control" id="" required [(ngModel)]="changeModelRequest.model">
+      </div>
+    </div>
+    <div class="row mb-3 align-items-center">
+      <label for="account" class="col-4 form-label">BASE URL <span class="text-danger-">*</span></label>
+      <div class="col-8">
+        <input name="baseUrl" type="" class="form-control" id="" required [(ngModel)]="changeModelRequest.baseUrl">
+      </div>
+    </div>
+    <div class="row mb-3 align-items-center">
+      <label for="account" class="col-4 form-label">API KEY <span class="text-danger-">*</span></label>
+      <div class="col-8">
+        <input name="apiKey" type="" class="form-control" id="" required [(ngModel)]="changeModelRequest.apiKey">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer d-flex- justify-content-between">
+    <button type="button" class="btn btn-modal-outline fs-6" data-bs-dismiss="modal" (click)="modal.dismiss('cancel click')">取消</button>
+    <button [disabled]="!(changeModelRequest.model && changeModelRequest.baseUrl && changeModelRequest.apiKey)" type="button" class="btn btn-modal-default fs-6" (click)="changeModel()">確認
+      <img *ngIf="isChangingModel" src="../../assets/images/spin-loading.gif" style="height: 20px;" alt="">
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #ragSettingsModal let-modal>
+  <div class="modal-header">
+    <div class="modal-title m-3 fw-bold text-decoration-none fs-4" id="staticBackdropLabel">RAG智慧搜尋設定</div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('cancel click')"></button>
+  </div>
+  <div class="modal-body align-items-center">
+    <div class="row mb-3 align-items-center">
+      <label class="col-7 form-label">文字切塊大小 Chunking
+      </label>
+      <div class="col-5">
+        <p>1500</p>
+      </div>
+    </div>
+    <div class="row mb-3 align-items-center">
+      <label for="account" class="col-7 form-label">每次參考的相關段落 Rag K
+      </label>
+      <div class="col-5">
+        <p>5</p>
+      </div>
+    </div>
+    <div class="row mb-3 align-items-center">
+      <label for="account" class="col-7 form-label">相關度最低門檻 Score Threshold
+      </label>
+      <div class="col-5">
+        <p>0.5</p>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer d-flex- justify-content-between">
+    <button type="button" class="btn btn-modal-outline fs-6" style="margin-left: auto; margin-right: auto;" data-bs-dismiss="modal" (click)="modal.dismiss('cancel click')">關閉</button>
+  </div>
+</ng-template>
+
+<ng-template #uploadPDFMModal let-modal>
+  <div class="modal-header">
+    <div class="modal-title m-3 fw-bold text-decoration-none fs-4" id="staticBackdropLabel">上傳仿單PDF</div>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="modal.dismiss('cancel click')"></button>
+  </div>
+  <div class="modal-body align-items-center" style="overflow: auto; max-height: 60vh;">
+    <app-upload></app-upload>
+  </div>
+  <hr>
+  <div class="modal-footer d-flex- justify-content-between">
+    <button type="button" class="btn btn-modal-outline fs-6" data-bs-dismiss="modal" (click)="modal.dismiss('cancel click')">取消</button>
+    <button type="button" class="btn btn-modal-default fs-6" (click)="modal.dismiss('cancel click')">確認</button>
+  </div>
+</ng-template>

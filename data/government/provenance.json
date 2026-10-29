@@ -1,0 +1,21 @@
+{
+  "dataset": "未註銷藥品許可證資料集",
+  "url": "https://data.gov.tw/dataset/9123",
+  "download_url": "https://data.fda.gov.tw/data/opendata/export/37/json",
+  "retrieved_at": "2026-10-23T15:36:48.034449+00:00",
+  "source_zip_sha256": "c375168c8161d7477f2fcbfbf6405e17b69497caf91f82e8249d13f4554ebf2d",
+  "source_rows": 25956,
+  "accepted_rows": 24839,
+  "excluded": {
+    "expired": 1117
+  },
+  "filter_date": "2026-10-23",
+  "license": "政府資料開放授權條款第1版",
+  "policy": "註銷狀態空白、無註銷日期且許可證未逾有效日期才納入；成分候選不等於病人實際產品。未以此建立交互作用規則。",
+  "restored_fields_from_same_snapshot": [
+    "適應症",
+    "劑型",
+    "許可證種類"
+  ],
+  "missing_fields_note": "原始快照未提供禁忌/完整仿單網址；用法用量可能為詳見仿單等指引，不是完整說明。"
+}

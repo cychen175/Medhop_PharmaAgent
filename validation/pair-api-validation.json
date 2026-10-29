@@ -1,0 +1,16 @@
+{
+  "all_passed": true,
+  "research_pair": [
+    "DB00203",
+    "DB00820"
+  ],
+  "actual_supported_paths": 2,
+  "research_not_clinical_DDI": true,
+  "original_label_warning_preserved": true,
+  "mapping_unknown_or_protein_rejected": true,
+  "mapping_source_required": true,
+  "mapping_change_invalidates_old_review": true,
+  "unapproved_delivery_blocked": true,
+  "live_patient_count": 0,
+  "isolation": "work/pair-api-runtime-v2 at 127.0.0.1:8503"
+}

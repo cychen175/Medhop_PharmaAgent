@@ -1,0 +1,11 @@
+{
+  "all_passed": true,
+  "full_names_in_patient_panel_choices_and_create_response": true,
+  "names_still_encrypted_at_rest": true,
+  "new_page_clears_active_case": true,
+  "medication_only_after_reload_does_not_update_previous_patient": true,
+  "existing_records_remain_searchable": true,
+  "same_mask_different_real_names_stay_separate": true,
+  "system_name": "藥你安心：藥事安全Agent",
+  "isolated_test_only": true
+}

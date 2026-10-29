@@ -1,0 +1,26 @@
+{
+  "all_passed": true,
+  "checks": [
+    "research_path_never_upgraded_to_clinical_interaction",
+    "actual_MedHop_pair_paths_raw_sources_and_original_directions",
+    "research_findings_require_pharmacist_resolution",
+    "original_PDF_warning_preserved_despite_missing_research_mapping",
+    "third_product_drug_list_does_not_create_DDI",
+    "unmapped_names_never_guessed",
+    "label_specific_no_effect_is_not_global_safe",
+    "explicit_research_identifiers_without_invented_doses",
+    "patient_identifier_not_medication",
+    "integrated_report_preserved_with_sources",
+    "identity_mapping_version_invalidates_old_report",
+    "no_unapproved_delivery"
+  ],
+  "actual_research_pair": {
+    "entities": [
+      "DB00203",
+      "DB00820"
+    ],
+    "paths": 2,
+    "clinical_status": "insufficient"
+  },
+  "live_patient_records_created": 0
+}

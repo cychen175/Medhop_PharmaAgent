@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <!-- 定義日誌輸出到 ./logs 目錄下 -->
+        <Property name="LOG_HOME">logs</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- 1. Console Appender: 輸出到控制台，用於即時查看 -->
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout
+                    pattern="%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{%5p} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n%ex" />
+        </Console>
+
+        <!-- 2. RollingFile Appender: 輸出到檔案，用於持久化記錄 -->
+        <RollingFile name="RollingFileInfo"
+                     fileName="${LOG_HOME}/agent-api-relay.log"
+                     filePattern="${LOG_HOME}/archive/agent-api-relay-%d{yyyy-MM-dd}-%i.log">
+
+            <!-- 檔案日誌格式 -->
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+
+            <Policies>
+                <!-- 每日滾動一次 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+
+            <!-- 最多保留 30 個日誌檔案 (可根據需求調整) -->
+            <DefaultRolloverStrategy max="30"/>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <!-- 專門為您的應用程式套件設定 Logger -->
+        <!-- 設定 com.twsc.agent_api_relay 及其子套件的日誌級別為 DEBUG -->
+        <!-- additivity="false" 確保日誌只通過這裡定義的 Appender 輸出，不重複傳遞給 Root -->
+        <Logger name="com.twsc.agent_api_relay" level="DEBUG" additivity="false">
+            <AppenderRef ref="RollingFileInfo"/>
+            <AppenderRef ref="ConsoleAppender">
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </AppenderRef>
+
+        </Logger>
+        <!-- 根日誌 Logger: 處理所有未被特定 Logger 捕獲的日誌 (如 Spring Framework 自身日誌) -->
+        <!-- 設置根日誌級別為 INFO，只輸出到 Console -->
+        <Root level="INFO">
+            <AppenderRef ref="ConsoleAppender" />
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,25 @@
+nav {
+  z-index: 999;
+  background-color: white;
+}
+
+.menu-actions {
+  display: flex;
+  gap: 2px;
+}
+
+.btn-circle {
+  background-color: #9FAF66;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-circle:hover {
+  background-color: #503621;
+  color: #fff;
+}

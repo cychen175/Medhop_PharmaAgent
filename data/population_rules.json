@@ -1,0 +1,19 @@
+{
+  "rules": [
+    {
+      "id": "glibenclamide-pregnancy-label",
+      "names": [
+        "Glibenclamide"
+      ],
+      "condition": "pregnancy",
+      "file": "A0047151G0.pdf",
+      "page": 1,
+      "quote": "孕婦或可能懷孕之婦女禁用本藥。",
+      "ingredient_anchor": "Glibenclamide",
+      "license": "衛署藥製字第004715號",
+      "pdf_sha256": "bf1106efc1bb67bbb65f20743cda6dc1c131ebfbeb02f7bfd1a5486865ff68f5",
+      "scope": "Ingredient-name warning grounded in this original product label; actual product and OCR require pharmacist verification."
+    }
+  ],
+  "policy": "Only explicit original-label prohibitions with verified ingredient anchors; no invented rules, doses or substitutions."
+}

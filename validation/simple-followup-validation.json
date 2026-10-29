@@ -1,0 +1,17 @@
+{
+  "all_passed": true,
+  "date": "2026-10-28",
+  "checks": [
+    "one_optional_followup_section",
+    "no_visible_form_fields_by_default",
+    "reports_loaded_only_when_opened",
+    "patient_guide_plain_text_preview",
+    "two_editors_collapsed",
+    "technical_PENDING_ids_removed_from_readable_pharmacist_copy",
+    "delivery_requirements_only_visible_when_requested",
+    "no_automatic_approval_or_prescription_changes",
+    "acceptance_gate_regression_passed"
+  ],
+  "live_patients_created": 0,
+  "validation_environment": "isolated runtime on port 8511"
+}

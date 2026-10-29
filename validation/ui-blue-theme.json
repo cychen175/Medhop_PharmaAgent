@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-25",
+  "theme": "logo-inspired blue",
+  "primary": "#2577aa",
+  "logo_blue": "#5ca4d9",
+  "logo_teal": "#5bb2aa",
+  "panels": "pale blue / white",
+  "verified": "Browser rendering and empty patient state",
+  "scope": "CSS palette only; clinical workflow and records unchanged"
+}

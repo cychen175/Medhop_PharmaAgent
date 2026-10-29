@@ -1,0 +1,17 @@
+{
+  "all_passed": true,
+  "agent_status": "completed",
+  "tools": [
+    "consult_pharmacy_agent",
+    "read_patient_medications",
+    "retrieve_medhop_mechanisms",
+    "retrieve_pharmacy_evidence"
+  ],
+  "native_graph_status": "completed",
+  "native_graph_scope": "進階 GraphRAG 僅針對第一組有逐邊支持原文的配對；其他配對保留完整結構化檢索結果。",
+  "per_pair_research_status": "mechanism_candidate",
+  "clinical_status": "insufficient",
+  "source_count": 3,
+  "review": "SY1Ip5U2Tm7kqRrX_Z2gQ4Ot",
+  "live_patient_records_created": 0
+}

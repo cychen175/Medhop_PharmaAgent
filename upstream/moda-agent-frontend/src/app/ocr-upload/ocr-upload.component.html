@@ -1,0 +1,100 @@
+<div class="ocr-container">
+  <!-- 未上傳狀態 -->
+  <div class="upload-view" *ngIf="!previewUrl">
+    <div class="steps">
+      <div class="step">
+        <h3 style="font-weight: bold;">STEP 1：選擇圖片</h3>
+        <div
+          class="drop-zone"
+          [class.dragging]="isDragging"
+          (dragover)="onDragOver($event)"
+          (dragleave)="onDragLeave($event)"
+          (drop)="onDrop($event)"
+        >
+          <div class="upload-icon"><img src="/assets/images/icon-import-file.svg" alt="Upload Image"></div>
+          <p style="font-weight: bold;">
+            拖曳圖片到這裡上傳<br>
+            <small>支援格式：{{ supportedFormats }}</small><br>或
+          </p>
+          <button class="upload-btn" (click)="fileInput.click()">
+            選擇檔案
+          </button>
+          <input
+            #fileInput
+            type="file"
+            [attr.accept]="acceptAttribute"
+            style="display: none"
+            (change)="onFileSelected($event)"
+          />
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between" style="margin-top: 30px;">
+          <button type="button" class="btn btn-modal-outline fs-6" style="padding: 5px 30px !important" (click)="reset()" [disabled]="!previewUrl">清除圖片</button>
+          <button type="button" class="btn btn-modal-default fs-6" style="padding: 5px 30px !important" (click)="uploadFile(file)" [disabled]="isUploading || !file.name">開始識別</button>
+        </div>
+      </div>
+
+      <div class="step result-step">
+        <h3 style="font-weight: bold;">STEP 2：識別結果</h3>
+        <div class="result-box disabled">
+          <textarea readonly placeholder="上傳圖片後，系統將自動進行圖像辨識..."></textarea>
+          <button class="copy-btn" disabled><img src="/assets/images/icon-copy.svg"> 複製</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 已上傳狀態 -->
+  <div class="result-view" *ngIf="previewUrl">
+    <div class="steps">
+      <div class="step">
+        <h3 style="font-weight: bold;">STEP 1：選擇圖片（滑鼠移入放大鏡檢視，點擊整張放大）</h3>
+        <div class="preview-box" *ngIf="previewUrl">
+          <div class="image-magnifier" (mousemove)="onMouseMove($event)" (mouseleave)="onMouseLeave()">
+            <!-- 原始圖片 -->
+            <img [src]="previewUrl" alt="上傳圖片預覽" class="original-image" (click)="openPhotoModal(prescriptionPhotoModal)" style="cursor: pointer;"/>
+
+            <!-- 放大鏡（鼠標移入時顯示） -->
+            <div class="magnifier-glass"
+                 [style.display]="showMagnifier ? 'block' : 'none'"
+                 [style.left.px]="magnifierX"
+                 [style.top.px]="magnifierY"
+                 [style.backgroundImage]="'url(' + previewUrl + ')'"
+                 [style.backgroundPosition]="backgroundPos"
+                 [style.backgroundSize]="backgroundSize">
+            </div>
+          </div>
+
+          <div class="loading" *ngIf="isUploading">辨識中...</div>
+        </div>
+        <hr>
+        <div class="d-flex justify-content-between" style="margin-top: 30px;">
+          <button type="button" class="btn btn-modal-outline fs-6" style="padding: 5px 30px !important" (click)="reset()" [disabled]="!previewUrl">清除圖片</button>
+          <button type="button" class="btn btn-modal-default fs-6" style="padding: 5px 30px !important" (click)="uploadFile(file)" [disabled]="isUploading">開始識別</button>
+        </div>
+      </div>
+
+      <div class="step result-step">
+        <h3 style="font-weight: bold;">STEP 2：識別結果</h3>
+        <div class="result-box">
+          <textarea [(ngModel)]="vlmText" placeholder="辨識結果將顯示於此"></textarea>
+          <button class="copy-btn" [disabled]="!vlmText" (click)="copyToClipboard()"><img src="/assets/images/icon-copy.svg"> 複製</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 錯誤訊息 -->
+  <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+</div>
+
+<!-- 圖片放大 Modal -->
+<ng-template #prescriptionPhotoModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title fw-bold">{{ file.name }}</h5>
+    <button type="button" class="btn-close" (click)="modal.dismiss('close')" aria-label="Close"></button>
+  </div>
+  <div class="modal-body text-center p-4">
+    <img [src]="previewUrl" alt="藥單大圖" class="img-fluid" style="max-height: 80vh; width: auto;" />
+  </div>
+</ng-template>

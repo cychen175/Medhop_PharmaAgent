@@ -1,0 +1,27 @@
+{
+  "source_file": "work/government/tfda-unrevoked-37.zip!37_5.json",
+  "snapshot_file": "data/government/tfda-products.json",
+  "snapshot_rows": 24839,
+  "classification_nonempty_rows": 0,
+  "products": [
+    {
+      "license": "衛署藥製字第052301號",
+      "raw_classification": null,
+      "raw_dosage": "詳如仿單。",
+      "matches_snapshot": true
+    },
+    {
+      "license": "衛署藥製字第052530號",
+      "raw_classification": null,
+      "raw_dosage": "詳如仿單",
+      "matches_snapshot": true
+    },
+    {
+      "license": "衛署藥製字第055272號",
+      "raw_classification": null,
+      "raw_dosage": "詳如仿單",
+      "matches_snapshot": true
+    }
+  ],
+  "all_passed": true
+}

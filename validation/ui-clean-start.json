@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-25",
+  "toolbar_removed": true,
+  "sample_entry_removed": true,
+  "empty_working_database": true,
+  "counts": {
+    "patients": 0,
+    "active_patient": 0,
+    "pending_patient": 0
+  },
+  "browser": "Verified empty patient panel, no toolbar, input enabled and send disabled until input.",
+  "backup_location": "runtime/backups/",
+  "no_startup_seeding": true
+}

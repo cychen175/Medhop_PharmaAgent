@@ -13,8 +13,17 @@ with tempfile.TemporaryDirectory(dir=ROOT/'runtime') as folder:
  with TestClient(asgi.app,base_url='http://127.0.0.1') as c:
   patients=lambda:c.get('/api/patients').json()['patients']
   r=ask(c,'新病人，68歲男性，目前吃 Aspirin',[('create_patient',{'name':'王小華','age':68,'sex':'男'})])
-  assert '姓名必須是藥師訊息中出現的原文' in r['results'][0]['error'] and not patients() and r['patient'] is None
+  assert '姓名必須是藥師在對話中寫過的原文' in r['results'][0]['error'] and not patients() and r['patient'] is None
   checks.append('a_name_the_pharmacist_did_not_write_is_refused')
+  r=ask(c,'先記一下：他每天早晚擦 Hydroquinone',[('create_patient',{'name':'林小美'})]);assert '姓名必須是藥師在對話中寫過的原文' in r['results'][0]['error']
+  r=ask(c,'他叫林小美，30歲女性',[('create_patient',{'name':'林小美','age':30,'sex':'女'}),('add_medications',{'medications':[{'name':'Hydroquinone','frequency':'每天早晚'},{'name':'Tretinoin'}]})])
+  assert r['patient']['name']=='林小美' and [m['name'] for m in r['patient']['medications']]==['Hydroquinone'] and any('Tretinoin' in e for e in r['results'][1]['errors'])
+  r=ask(c,'再加一次',[('add_medications',{'medications':[{'name':'Tretinoin'}]}),('add_medications',{'medications':[{'name':'Tretinoin'}]})])
+  assert '停止重試' in r['results'][1]['error'] and '停止重試' not in r['results'][0]['error']
+  r=ask(c,'他從來不擦防曬，每天晨跑',[('update_history',{'add_history':['从不擦防晒']}),('update_history',{'add_history':['從來不擦防曬','每天晨跑']})])
+  assert '不要改寫' in r['results'][0]['error'] and r['patient']['history']==['從來不擦防曬','每天晨跑']
+  c.post('/api/patients/reset',json={})
+  checks+=['names_and_drugs_from_earlier_turns_are_accepted','repeated_tool_errors_tell_the_model_to_stop','history_keeps_the_pharmacists_words']
   text='新病人王小明，68歲男性，電話 0912345678。有高血壓，對 Penicillin 過敏。目前吃 Warfarin 5mg 一天一次、Aspirin 100mg 一天一次。'
   r=ask(c,text,[('search_patients',{'query':'王小明'}),('create_patient',{'name':'王小明','age':68,'sex':'男'}),
                 ('update_history',{'add_history':['高血壓'],'add_allergies':['Penicillin']}),
@@ -31,7 +40,7 @@ with tempfile.TemporaryDirectory(dir=ROOT/'runtime') as folder:
   checks.append('original_words_kept_once_with_name_and_phone_redacted')
   c.post('/api/patients/reset',json={})
   r=ask(c,'新病人王小明，30歲男性',[('create_patient',{'name':'王小明','age':30,'sex':'男'})])
-  assert 'confirmed_new_person' in r['results'][0]['error'] and [x['id'] for x in r['patient_candidates']]==[p['id']] and len(patients())==1
+  assert 'confirmed_new_person' in r['results'][0]['error'] and [x['id'] for x in r['patient_candidates']]==[p['id']] and len(patients())==2
   checks.append('same_name_shows_candidates_instead_of_merging_or_duplicating')
   c.post('/api/patients/select',json={'id':p['id']});before=asgi.core.STORE.get(p['id'])
   r=ask(c,'他可以吃 Ibuprofen 嗎？',[('check_drug_combination',{'drugs':['Ibuprofen']})])
@@ -55,9 +64,29 @@ with tempfile.TemporaryDirectory(dir=ROOT/'runtime') as folder:
   r=ask(c,'你好',[('drop_database',{}),('answer_without_tools',{'reason':'打招呼'})],reply='你好，請問要處理哪位病人？[P3]')
   assert '沒有 drop_database' in r['results'][0]['error'] and r['reply'].startswith('你好，請問要處理哪位病人？') and '[P3]' not in r['reply']
   checks+=['unknown_tools_are_reported_back','citations_must_match_sources_found_in_this_message']
+  asgi.DEV=True
+  r=ask(c,'開發紀錄測試',[('answer_without_tools',{'reason':'測試'})],reply='好')
+  entry=json.loads((Path(folder)/'agent-log.jsonl').read_text(encoding='utf-8').splitlines()[-1])
+  assert entry['message']=='開發紀錄測試' and entry['reply']=='好' and entry['status']=='done' and entry['model_messages'][0]['role']=='system' and entry['steps'][1]['by']=='answer_without_tools'
+  page=c.get('/api/dev/agent-log');assert page.status_code==200 and '開發紀錄測試' in page.text and c.get('/api/bootstrap').json()['dev']
+  asgi.DEV=False;assert c.get('/api/dev/agent-log').status_code==404
+  checks.append('dev_mode_logs_each_run_and_shows_it')
   pharmacist_agent.call_model=model;asgi.core.MODEL_URL='http://127.0.0.1:9/v1'
   run=wait(c,'/api/agent/'+c.post('/api/agent',json={'message':'新病人王大明'}).json()['id'])
-  assert run['status']=='error' and '無法連線' in run['error'] and len(patients())==2
+  assert run['status']=='error' and '無法連線' in run['error'] and len(patients())==3
   checks.append('without_a_model_nothing_is_guessed_and_the_error_is_shown')
+  c.post('/api/patients/reset',json={})
+  r=ask(c,'有一位剛結婚的夫人',[('search_patients',{'query':'王'}),('select_patient',{'patient_id':p['id']})])
+  assert '沒有提到' in r['results'][1]['error'] and r['patient'] is None and p['id'] in [x['id'] for x in r['patient_candidates']]
+  c.post('/api/patients/select',json={'id':p['id']})
+  r=ask(c,'他其實叫王大華',[('update_patient_profile',{'name':'王大華'})])
+  assert '編輯基本資料' in r['results'][0]['error'] and asgi.core.STORE.get(p['id'])['name']=='王小明'
+  r=ask(c,'新病人陳小芳，40歲女性',[('create_patient',{'name':'陳小芳','age':40,'sex':'女'})])
+  r=ask(c,'打錯了，是陳曉芳',[('update_patient_profile',{'name':'陳曉芳'})]);assert r['patient']['name']=='陳曉芳'
+  checks+=['agent_selects_only_patients_the_pharmacist_named','only_names_of_patients_created_in_this_conversation_can_be_corrected']
+  r=ask(c,'上次檢查結果呢',[('get_latest_review',{'reason':'藥師詢問'}),('select_patient',{})],reply='这次检查还没有结果。')
+  assert '參數不正確' not in json.dumps(r['results'],ensure_ascii=False) and '缺少參數' in r['results'][1]['error'] and r['reply']=='這次檢查還沒有結果。'
+  assert '仿單原文：目前可檢索' in r['model_messages'][0]['content'] and '沒有的功能：刪除整份病歷' in r['model_messages'][0]['content']
+  checks+=['extra_tool_arguments_are_ignored_and_missing_ones_are_named','replies_are_shown_in_traditional_characters','agent_knows_label_count_and_screen_features']
  result={'all_passed':True,'checks':checks,'isolated_runtime':True,'model':'scripted tool calls; no model server'}
  (ROOT/'validation/pharmacist-agent-validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8');print(json.dumps(result,ensure_ascii=False))

@@ -2,6 +2,21 @@
 
 整合藥事 Agent 仿單與 MedHop 研究資料，提供病歷管理、藥物資料檢索及用藥風險提醒。
 
+## 快速部署（Linux）
+
+先在伺服器裝好 Docker Engine 與 Docker Compose v2，並啟動容器可連到的 Lemonade 模型服務。預設 Compose 使用 `http://host.docker.internal:13305/api/v1`，需要 `qwen3-it-4b-FLM` 和 `embed-gemma-300m-FLM`。
+
+在伺服器執行：
+
+```bash
+git clone https://github.com/cychen175/Medhop_PharmaAgent.git
+cd Medhop_PharmaAgent
+docker compose up -d --build
+docker compose ps
+```
+
+從自己的電腦執行 `ssh -N -L 8502:127.0.0.1:8502 deploy@SERVER`（替換成實際帳號與主機），再開啟 <http://127.0.0.1:8502>。MedHop GraphRAG worker 和索引已包含在 repo。若模型在另一台機器，或使用 Ollama 等其他端點，請先依[遠端部署操作手冊](#遠端部署操作手冊)覆寫模型設定。
+
 ## 主要功能
 
 - 藥師 Agent：每則對話訊息交給模型，由模型呼叫工具建立或查詢病歷、更新病史與用藥、試算併用、執行完整檢查、查仿單與暫存藥品資料；不再用關鍵字規則判斷輸入。

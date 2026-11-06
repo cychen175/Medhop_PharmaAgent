@@ -281,9 +281,11 @@ async def lifespan(app):
 
 app=FastAPI(title='藥你安心：藥事安全Agent',version='2.0.0',lifespan=lifespan)
 
+# Behind a reverse proxy, list the public host names (comma separated); without it only local names are accepted.
+ALLOWED_HOSTS={'127.0.0.1','localhost','[::1]'}|{h.strip() for h in os.environ.get('MEDHOP_ALLOWED_HOSTS','').split(',') if h.strip()}
 @app.middleware('http')
 async def local_session(request:Request,call_next):
-    if request.headers.get('host','').split(':')[0] not in {'127.0.0.1','localhost','[::1]'}:
+    if request.headers.get('host','').split(':')[0] not in ALLOWED_HOSTS:
         return JSONResponse({'error':'僅允許本機主機名稱'},status_code=403)
     if request.method not in {'GET','HEAD','OPTIONS'}:
         if request.headers.get('origin') and request.headers['origin']!=str(request.base_url).rstrip('/'):
@@ -484,7 +486,7 @@ def agent_context(sid):
         start_review=agent_start_review,quick_check=agent_quick_check,alerts=agent_alerts,log_input=agent_log_input,
         set_acquisition=agent_set_acquisition,enrich=lambda med:store.ingredient_lookup.enrich(med) if getattr(store,'ingredient_lookup',None) else None,
         log_run=agent_dev_log if DEV else None)
-def agent_model():return {'url':core.MODEL_URL,'model':core.MODEL,'headers':core.model_headers()}
+def agent_model():return {'url':core.MODEL_URL,'model':core.MODEL,'headers':core.model_headers(),'options':core.model_options()}
 AGENT_LOG_LOCK=threading.Lock()
 def agent_log_path():return core.RUNTIME/'agent-log.jsonl'
 def agent_dev_log(entry):
